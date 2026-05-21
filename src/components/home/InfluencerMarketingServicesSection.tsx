@@ -139,7 +139,7 @@ export default function InfluencerMarketingServicesSection() {
                   type="button"
                   onClick={() => setActiveIndex(index)}
                   aria-pressed={isActive}
-                  className="flex h-[92px] w-[429px] items-center border border-[#D8D2D2] bg-white text-left -mt-px first:mt-0"
+                  className="flex h-[92px] w-[429px] cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px first:mt-0"
                 >
                   <span className="flex h-full w-[72px] shrink-0 items-center justify-center font-sans text-[16px] font-medium leading-[26px] text-black">
                     {service.id}

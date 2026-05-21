@@ -178,7 +178,7 @@ export default function OtherServicesSection() {
                       setExpandedIndex(isExpanded ? 0 : index)
                     }
                     aria-expanded={isExpanded}
-                    className="flex w-full items-start justify-between gap-6 py-6 text-left"
+                    className="flex w-full cursor-pointer items-start justify-between gap-6 py-6 text-left"
                   >
                     <div className="flex flex-1 items-start gap-4">
                       <span className="font-sans text-[16px] font-semibold leading-[26px] text-black">
