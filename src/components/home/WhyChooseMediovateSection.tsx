@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const CARD_PAIR_WIDTH = 776;
+const CARD_PAIR_WIDTH = 760;
 const CARD_PAIR_GAP = 24;
+const CARD_PAIR_STEP = CARD_PAIR_WIDTH + CARD_PAIR_GAP;
 
 const featureCards = [
   {
@@ -19,21 +20,21 @@ const featureCards = [
     imageAlt: "ROI-driven campaign analytics dashboard",
     title: "ROI-Driven, Data-Backed Campaigns",
     description:
-      "Every campaign decision is backed by deep audience data, competitor analysis, and performance benchmarks. We track impressions, engagement, conversions, and earned media value.",
+      "Every campaign decision is backed by deep audience data, competitor analysis, and performance benchmarks. We track impressions, engagement, conversions, and earned media value , not just post counts.",
   },
   {
     image: "/assets/Home/connect.png",
     imageAlt: "Influencer network across niches",
-    title: "Niche-First Creator Matching",
+    title: "360° Brand Growth Approach",
     description:
-      "We match brands with creators whose audiences align with your category, geography, and campaign goals to deliver authentic reach that converts into measurable business impact.",
+      "Influencer marketing + creative branding + digital marketing , a unified strategy that builds your brand from awareness to conversion, ensuring consistent messaging across every platform and touchpoint.",
   },
   {
     image: "/assets/Home/stats.png",
     imageAlt: "Campaign performance reporting",
-    title: "Transparent Performance Reporting",
+    title: "Transparent Reporting & Dedicated Teams",
     description:
-      "Get clear visibility into campaign KPIs with real-time dashboards, post-campaign analysis, and actionable insights that help you scale what works and optimize what does not.",
+      "Real-time campaign dashboards, monthly performance reports, zero hidden costs and a dedicated account team who knows your brand inside out. You're always in the loop, always in control.",
   },
 ];
 
@@ -132,14 +133,14 @@ function FeatureCardPair({
 
 export default function WhyChooseMediovateSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const maxIndex = Math.max(0, featureCards.length - 2);
-
   const goToPrevious = () => {
-    setActiveIndex((index) => Math.max(index - 1, 0));
+    setActiveIndex(
+      (index) => (index - 1 + featureCards.length) % featureCards.length,
+    );
   };
 
   const goToNext = () => {
-    setActiveIndex((index) => Math.min(index + 1, maxIndex));
+    setActiveIndex((index) => (index + 1) % featureCards.length);
   };
 
   return (
@@ -169,16 +170,8 @@ export default function WhyChooseMediovateSection() {
           </p>
 
           <div className="absolute right-0 top-1/2 flex  items-center gap-4">
-            <CarouselArrow
-              direction="left"
-              onClick={goToPrevious}
-              disabled={activeIndex === 0}
-            />
-            <CarouselArrow
-              direction="right"
-              onClick={goToNext}
-              disabled={activeIndex === maxIndex}
-            />
+            <CarouselArrow direction="left" onClick={goToPrevious} />
+            <CarouselArrow direction="right" onClick={goToNext} />
           </div>
         </div>
 
@@ -186,7 +179,7 @@ export default function WhyChooseMediovateSection() {
           <div
             className="flex transition-transform duration-500 ease-out"
             style={{
-              transform: `translateX(-${activeIndex * (CARD_PAIR_WIDTH + CARD_PAIR_GAP)}px)`,
+              transform: `translateX(-${activeIndex * CARD_PAIR_STEP}px)`,
             }}
           >
             {featureCards.map((card) => (

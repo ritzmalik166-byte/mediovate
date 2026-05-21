@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-const services = [
+const services: {
+  id: string;
+  title: string;
+  description: ReactNode;
+  image: string;
+}[] = [
   {
     id: "01",
     title: "Influencer Identification and Vetting",
@@ -14,36 +19,80 @@ const services = [
   {
     id: "02",
     title: "Micro & Macro Influencer Campaigns",
-    description:
-      "We design and execute micro and macro influencer campaigns tailored to your goals, combining creator scale, audience fit, and content quality to maximize reach, engagement, and conversions across platforms.",
+    description: (
+      <>
+        We design multi-tier influencer marketing strategies that leverage{" "}
+        <strong className="font-bold">nano (1K-10K followers)</strong> for deeply
+        specific niche communities and{" "}
+        <strong className="font-bold">macro &amp; celebrities</strong> for brand
+        awareness, to reach as wide an audience as possible while minimizing
+        marketing expenditure.
+      </>
+    ),
     image: "/assets/Home/photo_lady.png",
   },
   {
     id: "03",
     title: "Influencer Campaign Management",
-    description:
-      "From briefing and content approvals to posting schedules and creator coordination, we manage every stage of your influencer campaign so your brand stays on message and on time.",
+    description: (
+      <>
+        Our end-to-end{" "}
+        <strong className="font-bold">
+          influencer marketing campaign management
+        </strong>{" "}
+        covers every step of the journey including creative briefing, approvals
+        and posting schedules and even brand safety checks and compliance to
+        ensure your campaigns are always successful, delivered on time and stay
+        on message.
+      </>
+    ),
     image: "/assets/Home/hands_up_lady.png",
   },
   {
     id: "04",
     title: "Performance Tracking & ROI Analytics",
-    description:
-      "We track campaign performance with data-backed reporting on reach, engagement, clicks, and conversions, giving you clear visibility into ROI and actionable insights for future campaigns.",
+    description: (
+      <>
+        Real-time{" "}
+        <strong className="font-bold">
+          influencer campaign analytics, impressions, reach, story views, link
+          clicks, conversions, earned media value, and ROI dashboards.
+        </strong>{" "}
+        We measure every metric that matters and optimise campaigns for maximum
+        commercial impact.
+      </>
+    ),
     image: "/assets/Home/campaign-creator.png",
   },
   {
     id: "05",
     title: "Long-Term Influencer Brand Partnerships",
-    description:
-      "We build lasting creator partnerships that strengthen brand affinity over time, turning one-off collaborations into consistent advocacy and sustained audience growth.",
+    description: (
+      <>
+        Move beyond one-off posts. We build sustained{" "}
+        <strong className="font-bold">
+          influencer brand partnerships, ambassador programmes, seasonal
+          collaborations, and recurring campaigns
+        </strong>{" "}
+        that create consistent brand recall and deep audience loyalty over time.
+      </>
+    ),
     image: "/assets/Home/lady.png",
   },
   {
     id: "06",
     title: "UGC & Regional Influencer Marketing",
-    description:
-      "We activate user-generated content and regional creators to deliver authentic, localized storytelling that resonates with niche communities and drives trust at scale.",
+    description: (
+      <>
+        Harness the power of{" "}
+        <strong className="font-bold">user-generated content (UGC)</strong> and{" "}
+        <strong className="font-bold">
+          regional language creators ,Hindi, Tamil, Punjabi, Bengali
+        </strong>{" "}
+        and more to tap into India&apos;s massive tier-2 and tier-3 digital
+        audiences with authentic, culturally relevant storytelling.
+      </>
+    ),
     image: "/assets/Home/game_lady.png",
   },
 ];

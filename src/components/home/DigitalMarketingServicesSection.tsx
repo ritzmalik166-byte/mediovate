@@ -23,60 +23,65 @@ const slides: {
     image: "/assets/Home/seo_image.png",
   },
   {
+    title: "PPC & Google Ads Management",
+    description: (
+      <>
+        High ROI pay per click advertising for{" "}
+        <strong className="font-bold">
+          Google Search, Display, Shopping, YouTube
+        </strong>{" "}
+        and others with targeted campaigns, efficient bid management, split
+        tested ads and conversion optimised landing pages, thereby reducing the
+        Cost Per Acquisition.
+      </>
+    ),
+    image: "/assets/Home/seo_image.png",
+  },
+  {
     title: "Social Media Marketing (SMM)",
     description: (
       <>
-        Build brand visibility and engagement with platform-specific{" "}
-        <strong className="font-bold">
-          content strategy, community management, paid social campaigns
-        </strong>
-        , and <strong className="font-bold">performance analytics</strong>{" "}
-        that turn followers into loyal customers.
+        From organic content calendar planning to community management and
+        effective Meta Ads for organic audience expansion and tangible business
+        outcome, we design strategy on{" "}
+        <strong className="font-bold">Instagram, Facebook, LinkedIn,</strong> and{" "}
+        <strong className="font-bold">YouTube.</strong>
       </>
     ),
-    image: "/assets/Home/campaign-creator.png",
+    image: "/assets/Home/seo_image.png",
   },
+  
   {
-    title: "Pay-Per-Click Advertising (PPC)",
+    title: "Content Marketing & SEO Blogging",
     description: (
       <>
-        Drive instant qualified traffic with data-driven{" "}
+        Organic SEO focused content marketing:{" "}
         <strong className="font-bold">
-          Google Ads, Meta Ads, remarketing funnels
-        </strong>
-        , and <strong className="font-bold">conversion tracking</strong> that
-        maximise ROI and reduce cost per acquisition.
-      </>
-    ),
-    image: "/assets/Home/photo_lady.png",
-  },
-  {
-    title: "Content Marketing",
-    description: (
-      <>
-        Attract and nurture leads through strategic{" "}
-        <strong className="font-bold">
-          blogs, landing pages, email copy, and thought leadership
+          pillar pages, topic clusters, blog strategies,
         </strong>{" "}
-        backed by <strong className="font-bold">SEO-led content planning</strong>{" "}
-        that builds authority and long-term organic growth.
+        and{" "}
+        <strong className="font-bold">
+          thought-leadership content, email newsletters
+        </strong>{" "}
+        that drive rankings on search engines, education and nurturing of leads
+        throughout the sales funnel.
       </>
     ),
-    image: "/assets/Home/hands_up_lady.png",
+    image: "/assets/Home/seo_image.png",
   },
   {
-    title: "Conversion Rate Optimisation (CRO)",
+    title: "Website Design & Development",
     description: (
       <>
-        Turn more visitors into customers with{" "}
+        Responsive and Google Core Web Vitals optimised design with best possible
+        speed and conversion focused development tailored for high quality organic
+        traffic and enhanced lead generation across{" "}
         <strong className="font-bold">
-          funnel analysis, A/B testing, UX improvements
+          landing pages, e-commerce sites, and corporate websites.
         </strong>
-        , and <strong className="font-bold">landing page optimisation</strong>{" "}
-        designed to increase conversions across every digital touchpoint.
       </>
     ),
-    image: "/assets/Home/game_lady.png",
+    image: "/assets/Home/seo_image.png",
   },
 ];
 

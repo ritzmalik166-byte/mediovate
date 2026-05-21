@@ -1,38 +1,84 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-const creativeServices = [
+const creativeServices: {
+  id: string;
+  title: string;
+  description: ReactNode;
+}[] = [
   {
     id: "01",
     title: "Brand Identity & Logo Design",
-    description:
-      "Complete brand identity design logo creation, typography selection, colour palettes, and brand guidelines that ensure a unified, professional look across all platforms and media.",
+    description: (
+      <>
+        Complete brand identity design
+        <br />
+        <strong className="font-bold">
+          logo creation, typography selection, colour palettes,
+        </strong>{" "}
+        and <strong className="font-bold">brand guidelines</strong> that ensure
+        a unified, professional look across all platforms and media.
+      </>
+    ),
   },
   {
     id: "02",
     title: "Social Media Creative Design",
-    description:
-      "Scroll-stopping social creatives, reels, stories, and platform-specific designs that strengthen your brand voice and drive engagement across every channel.",
+    description: (
+      <>
+        Scroll-stopping social media creatives such as{" "}
+        <strong className="font-bold">
+          Instagram posts, Reels thumbnails, Facebook ads, LinkedIn banners,
+        </strong>{" "}
+        and <strong className="font-bold">YouTube channel art</strong> designed
+        to boost engagement and reinforce brand recall consistently.
+      </>
+    ),
   },
   {
     id: "03",
     title: "Ad Creatives & Campaign Visuals",
-    description:
-      "High-converting ad creatives and campaign visuals tailored for performance across digital platforms, from concept to final production-ready assets.",
+    description: (
+      <>
+        High-converting digital ad creatives for{" "}
+        <strong className="font-bold">
+          Google Display, Meta Ads, YouTube pre-roll,
+        </strong>{" "}
+        and <strong className="font-bold">programmatic advertising</strong>,
+        designed with messaging and visual hierarchy that drives clicks and
+        conversions.
+      </>
+    ),
   },
   {
     id: "04",
     title: "Packaging & Brand Collateral Design",
-    description:
-      "Packaging, brochures, presentations, and brand collateral designed to deliver a consistent, premium brand experience at every touchpoint.",
+    description: (
+      <>
+        Product packaging design, brochures, pitch decks,{" "}
+        <strong className="font-bold">business cards,</strong> and all{" "}
+        <strong className="font-bold">brand collateral</strong>, crafted to
+        leave a lasting impression whether your customer is online or holding
+        your product in their hands.
+      </>
+    ),
   },
   {
     id: "05",
     title: "Video Production & Motion Graphics",
-    description:
-      "Professional video production and motion graphics that bring your brand story to life through compelling visuals, animation, and cinematic storytelling.",
+    description: (
+      <>
+        <strong className="font-bold">
+          Brand films, explainer videos, Instagram Reels production, product
+          demo videos,
+        </strong>{" "}
+        and <strong className="font-bold">animated motion graphics</strong>,
+        compelling video content that communicates your brand story with impact
+        and shareability.
+      </>
+    ),
   },
 ];
 
