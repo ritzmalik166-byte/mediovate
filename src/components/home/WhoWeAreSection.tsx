@@ -96,7 +96,7 @@ export default function WhoWeAreSection() {
       <div className="mx-auto max-w-[1366px] px-10">
         <div className="flex items-start">
           <div className="shrink-0">
-            <h2 className="w-[702px] max-w-full text-[76px] font-medium leading-normal text-black">
+            <h2 className="w-[702px] max-w-full text-[76px] font-medium leading-[102px] text-black">
               Influence.
               <br />
               <span className="text-mediovate-tan">Engage.</span> Convert.
