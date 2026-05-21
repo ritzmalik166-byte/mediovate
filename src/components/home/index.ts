@@ -1,0 +1,14 @@
+export { default as CampaignCtaSection } from "./CampaignCtaSection";
+export { default as DigitalMarketingServicesSection } from "./DigitalMarketingServicesSection";
+export { default as FooterSection } from "./FooterSection";
+export { default as FlagshipServiceSection } from "./FlagshipServiceSection";
+export { default as InfluencerMarketingServicesSection } from "./InfluencerMarketingServicesSection";
+export { default as OtherServicesSection } from "./OtherServicesSection";
+export { default as PlatformReachSection } from "./PlatformReachSection";
+export { default as HeroSection } from "./HeroSection";
+export { default as HowWeWorkSection } from "./HowWeWorkSection";
+export { default as IndustriesWeServeSection } from "./IndustriesWeServeSection";
+export { default as WhoWeAreSection } from "./WhoWeAreSection";
+export { default as WhyChooseMediovateSection } from "./WhyChooseMediovateSection";
+export { default as Navbar } from "./Navbar";
+export { default as HeroContent } from "./HeroContent";
