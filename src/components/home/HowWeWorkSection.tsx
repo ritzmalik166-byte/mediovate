@@ -78,7 +78,13 @@ const processSteps = [
   },
 ];
 
-function ProcessCardPointer({ direction }: { direction: "up" | "down" }) {
+function ProcessCardPointer({
+  direction,
+  className,
+}: {
+  direction: "up" | "down";
+  className?: string;
+}) {
   if (direction === "down") {
     return (
       <svg
@@ -88,12 +94,9 @@ function ProcessCardPointer({ direction }: { direction: "up" | "down" }) {
         viewBox="0 0 249 13"
         fill="none"
         aria-hidden="true"
-        className="shrink-0"
+        className={`shrink-0 ${className ?? ""}`}
       >
-        <path
-          d="M124.5 13L131.428 1H117.572L124.5 13Z"
-          fill="white"
-        />
+        <path d="M124.5 13L131.428 1H117.572L124.5 13Z" fill="white" />
       </svg>
     );
   }
@@ -106,10 +109,29 @@ function ProcessCardPointer({ direction }: { direction: "up" | "down" }) {
       viewBox="0 0 249 13"
       fill="none"
       aria-hidden="true"
-      className="shrink-0"
+      className={`shrink-0 ${className ?? ""}`}
     >
       <path d="M124.5 0L131.428 12H117.572L124.5 0Z" fill="white" />
     </svg>
+  );
+}
+
+function ProcessCardBody({
+  title,
+  description,
+}: {
+  title: string;
+  description: ReactNode;
+}) {
+  return (
+    <div className="flex w-full flex-col items-center justify-center rounded-[5px] border border-white bg-[#A87C4F] px-4 py-5 text-center text-white md:px-5 lg:h-[194px] lg:w-[249px] lg:py-0">
+      <h3 className="font-sans text-[16px] font-semibold leading-[24px] md:text-[17px] lg:text-[18px] lg:leading-[26px]">
+        {title}
+      </h3>
+      <p className="mt-2 font-open-sans text-[13px] font-normal leading-[20px] md:mt-2.5 md:text-[13px] lg:mt-3 lg:text-[14px] lg:leading-[22px]">
+        {description}
+      </p>
+    </div>
   );
 }
 
@@ -122,16 +144,7 @@ function ProcessCard({
   description: ReactNode;
   placement: "above" | "below";
 }) {
-  const cardBody = (
-    <div className="flex h-[194px] w-[249px] flex-col items-center justify-center rounded-[5px] border border-white bg-[#A87C4F] px-5 text-center text-white">
-      <h3 className="font-sans text-[18px] font-semibold leading-[26px]">
-        {title}
-      </h3>
-      <p className="mt-3 font-open-sans text-[14px] font-normal leading-[22px]">
-        {description}
-      </p>
-    </div>
-  );
+  const cardBody = <ProcessCardBody title={title} description={description} />;
 
   if (placement === "above") {
     return (
@@ -150,27 +163,64 @@ function ProcessCard({
   );
 }
 
+function MobileProcessStep({
+  title,
+  description,
+  stepNumber,
+}: {
+  title: string;
+  description: ReactNode;
+  stepNumber: number;
+}) {
+  return (
+    <li className="w-full md:max-w-[560px] md:self-center">
+      <div className="flex w-full flex-col items-center justify-center rounded-[5px] border border-white bg-[#A87C4F] px-4 py-5 text-center text-white md:px-5 md:py-6">
+        <span className="mb-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FFD2A3] font-sans text-[14px] font-semibold text-[#5c3d2e]">
+          {stepNumber}
+        </span>
+        <h3 className="font-sans text-[16px] font-semibold leading-[24px] md:text-[17px]">
+          {title}
+        </h3>
+        <p className="mt-2 font-open-sans text-[13px] font-normal leading-[20px] md:text-[14px] md:leading-[22px]">
+          {description}
+        </p>
+      </div>
+    </li>
+  );
+}
+
 export default function HowWeWorkSection() {
   return (
-    <section className="h-[811px] bg-[#A87C4F]">
-      <div className="mx-auto flex h-full max-w-[1366px] flex-col px-10 py-14">
+    <section className="bg-[#A87C4F] py-10 md:py-12 lg:h-[811px] lg:py-0">
+      <div className="mx-auto flex h-full max-w-[1366px] flex-col px-4 md:px-8 lg:px-10 lg:py-14">
         <div className="flex flex-col items-center text-white">
-          <h2 className="text-center font-sans text-[60px] font-medium leading-[54px] text-white">
+          <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] text-white md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[54px]">
             How We Work
           </h2>
 
-          <p className="mt-4 text-center font-sans text-[24px] font-semibold leading-[34px] text-white">
+          <p className="mt-3 text-center font-sans text-[18px] font-semibold leading-[26px] text-white md:mt-4 md:text-[20px] md:leading-[30px] lg:text-[24px] lg:leading-[34px]">
             From Strategy to Viral : Our 5-Step Process
           </p>
 
-          <p className="mt-4 h-[67px] w-[795px] text-center font-open-sans text-[16px] font-normal leading-[28px] text-white">
+          <p className="mt-3 w-full max-w-[795px] text-center font-open-sans text-[15px] font-normal leading-[26px] text-white md:mt-4 md:text-[16px] md:leading-[28px] lg:h-[67px]">
             Our battle-tested campaign framework ensures every influencer,
             creative, or digital marketing project delivers maximum impact from
             day one.
           </p>
         </div>
 
-        <div className="mt-10 flex flex-1 flex-col justify-center">
+        <ol className="mx-auto mt-8 flex w-full max-w-[640px] flex-col gap-5 md:gap-6 lg:hidden">
+          {processSteps.map((step, index) => (
+            <MobileProcessStep
+              key={step.title}
+              title={step.title}
+              description={step.description}
+              stepNumber={index + 1}
+            />
+          ))}
+        </ol>
+
+        <div className="mt-10 hidden flex-1 flex-col justify-center lg:flex">
           <div className="grid grid-cols-5 items-end gap-0">
             {processSteps.map((step) =>
               step.placement === "above" ? (

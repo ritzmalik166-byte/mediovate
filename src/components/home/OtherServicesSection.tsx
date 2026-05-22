@@ -107,37 +107,37 @@ export default function OtherServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[1366px] px-10">
+    <section className="overflow-hidden bg-white py-8 lg:py-0">
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center">
-          <span className="text-center font-sans text-[16px] font-semibold uppercase leading-normal text-[#A87C4F]">
+          <span className="text-center font-sans text-[14px] font-semibold uppercase leading-normal text-[#A87C4F] md:text-[15px] lg:text-[16px]">
             Our Other Services
           </span>
 
-          <h2 className="mt-4 text-center">
-            <span className="mx-auto block w-[605px] font-sans text-[60px] font-medium leading-[72px] text-black">
+          <h2 className="mt-4 w-full text-center">
+            <span className="mx-auto block w-full font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:w-[605px] lg:text-[60px] lg:leading-[72px]">
               Creative Services &amp;
             </span>
-            <span className="block font-sans text-[60px] font-medium leading-[72px] text-[#A87C4F]">
+            <span className="block font-sans text-[32px] font-medium leading-[40px] text-[#A87C4F] md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">
               Digital Marketing
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 h-[68px] w-[727px] text-center font-open-sans text-[16px] font-normal leading-[28px] text-black">
+          <p className="mx-auto mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:max-w-[600px] md:text-[16px] md:leading-[28px] lg:mt-6 lg:h-[68px] lg:w-[727px] lg:max-w-none">
             From influencer collaborations to full-scale digital campaigns,
             Mediovate delivers complete marketing solutions for modern brands.
           </p>
         </div>
       </div>
 
-      <div className="mt-12 bg-[#FFF5EB] py-14">
-        <div className="mx-auto flex max-w-[1366px] items-start justify-center px-10">
-          <div className="w-[320px] shrink-0 pt-4">
-            <h3 className="w-[363px] font-sans text-[36px] leading-[50px] text-black">
+      <div className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-12 lg:py-14">
+        <div className="mx-auto flex max-w-[1366px] flex-col items-stretch gap-8 px-4 md:gap-10 md:px-8 lg:flex-row lg:items-start lg:justify-center lg:gap-0 lg:px-10">
+          <div className="w-full shrink-0 pt-0 md:max-w-[560px] md:self-center lg:w-[320px] lg:max-w-none lg:pt-4">
+            <h3 className="w-full text-center font-sans text-[24px] leading-[34px] text-black md:text-[28px] md:leading-[40px] lg:w-[363px] lg:text-left lg:text-[36px] lg:leading-[50px]">
               <span className="font-extrabold">Creative Agency Services</span>{" "}
               <span className="font-medium">That Elevate Your Brand Identity</span>
             </h3>
-            <p className="mt-6 h-[141px] w-[324px] font-open-sans text-[16px] font-normal leading-[28px] text-black">
+            <p className="mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:text-[16px] md:leading-[28px] lg:mt-6 lg:h-[141px] lg:w-[324px] lg:text-left">
               As the best creative branding agency in India, we don&apos;t just
               make things look good we craft creative solutions that communicate
               your brand&apos;s value, personality, and purpose with clarity and
@@ -145,7 +145,7 @@ export default function OtherServicesSection() {
             </p>
             <button
               type="button"
-              className="group mt-14 flex h-[54px] w-[296px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[16px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
+              className="group mx-auto mt-6 flex h-[48px] w-full max-w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[15px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-8 md:max-w-[400px] lg:mx-0 lg:mt-14 lg:h-[54px] lg:w-[296px] lg:max-w-none lg:text-[16px]"
             >
               <span className="transition-colors duration-300">
                 Get a Creative Proposal
@@ -154,16 +154,17 @@ export default function OtherServicesSection() {
             </button>
           </div>
 
-          <div className="relative mx-10 h-[519px] w-[367px] shrink-0 overflow-hidden rounded-[20px]">
+          <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[300px] md:max-w-[560px] md:self-center lg:mx-10 lg:h-[519px] lg:w-[367px] lg:max-w-none">
             <Image
               src="/assets/Home/logo design 1.png"
               alt="Creative brand identity design showcase"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 560px, 367px"
             />
           </div>
 
-          <div className="w-[520px] shrink-0">
+          <div className="w-full shrink-0 md:max-w-[640px] md:self-center lg:w-[520px] lg:max-w-none">
             {creativeServices.map((service, index) => {
               const isExpanded = expandedIndex === index;
 
@@ -178,28 +179,36 @@ export default function OtherServicesSection() {
                       setExpandedIndex(isExpanded ? 0 : index)
                     }
                     aria-expanded={isExpanded}
-                    className="flex w-full cursor-pointer items-start justify-between gap-6 py-6 text-left"
+                    className="relative flex w-full cursor-pointer flex-col py-4 pr-10 text-left md:py-5 lg:flex-row lg:items-start lg:justify-between lg:gap-6 lg:py-6 lg:pr-0"
                   >
-                    <div className="flex flex-1 items-start gap-4">
-                      <span className="font-sans text-[16px] font-semibold leading-[26px] text-black">
-                        {service.id}.
-                      </span>
-                      <span
-                        className={`font-sans text-[16px] font-semibold leading-[26px] text-black ${
-                          isExpanded
-                            ? "h-[69px] w-[159px] shrink-0"
-                            : "flex-1"
-                        }`}
-                      >
-                        {service.title}
-                      </span>
+                    <div
+                      className={`flex w-full gap-3 md:gap-4 lg:flex-1 ${
+                        isExpanded
+                          ? "flex-col lg:flex-row lg:items-start"
+                          : "flex-row items-start"
+                      }`}
+                    >
+                      <div className="flex min-w-0 flex-1 items-start gap-3">
+                        <span className="shrink-0 font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] lg:text-[16px] lg:leading-[26px]">
+                          {service.id}.
+                        </span>
+                        <span
+                          className={`font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] lg:text-[16px] lg:leading-[26px] ${
+                            isExpanded
+                              ? "lg:h-[69px] lg:w-[159px] lg:shrink-0"
+                              : "flex-1"
+                          }`}
+                        >
+                          {service.title}
+                        </span>
+                      </div>
                       {isExpanded ? (
-                        <p className="h-[180px] w-[270px] shrink-0 font-open-sans text-[15px] font-normal leading-[26px] text-black">
+                        <p className="w-full pl-7 font-open-sans text-[14px] font-normal leading-[24px] text-black md:pl-8 md:text-[14px] md:leading-[25px] lg:pl-0 lg:h-[180px] lg:w-[270px] lg:shrink-0 lg:text-[15px] lg:leading-[26px]">
                           {service.description}
                         </p>
                       ) : null}
                     </div>
-                    <span className="font-sans text-[24px] font-light leading-none text-black">
+                    <span className="absolute right-0 top-4 font-sans text-[24px] font-light leading-none text-black lg:relative lg:top-auto lg:shrink-0">
                       {isExpanded ? "−" : "+"}
                     </span>
                   </button>

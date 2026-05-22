@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 
 const services: {
   id: string;
@@ -119,17 +119,31 @@ function ServiceArrowIcon() {
 
 export default function InfluencerMarketingServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const previewPanelRef = useRef<HTMLDivElement>(null);
   const activeService = services[activeIndex];
 
+  const handleSelectService = (index: number) => {
+    setActiveIndex(index);
+
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) {
+      window.requestAnimationFrame(() => {
+        previewPanelRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+    }
+  };
+
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[1366px] px-10">
-        <h2 className="text-center font-sans text-[50px] font-medium leading-normal text-black">
+    <section className="bg-white py-8 md:py-0">
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
+        <h2 className="text-center font-sans text-[28px] font-medium leading-[36px] text-black md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-normal">
           Our Influencer Marketing Services
         </h2>
 
-        <div className="mt-12 flex items-start justify-center">
-          <div className="flex flex-col">
+        <div className="mt-8 flex flex-col gap-6 max-md:gap-6 md:mt-10 md:flex-row md:items-start md:gap-5 lg:mt-12 lg:justify-center lg:gap-0">
+          <div className="flex w-full shrink-0 flex-col md:w-[min(100%,280px)] lg:w-auto">
             {services.map((service, index) => {
               const isActive = activeIndex === index;
 
@@ -137,23 +151,23 @@ export default function InfluencerMarketingServicesSection() {
                 <button
                   key={service.id}
                   type="button"
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleSelectService(index)}
                   aria-pressed={isActive}
-                  className="flex h-[92px] w-[429px] cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px first:mt-0"
+                  className="flex min-h-[72px] w-full cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:h-[92px] lg:w-[429px]"
                 >
-                  <span className="flex h-full w-[72px] shrink-0 items-center justify-center font-sans text-[16px] font-medium leading-[26px] text-black">
+                  <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[60px] md:text-[15px] lg:w-[72px] lg:text-[16px]">
                     {service.id}
                   </span>
                   <span
                     className="h-full w-px shrink-0 bg-[#D8D2D2]"
                     aria-hidden="true"
                   />
-                  <span className="flex flex-1 items-center pl-5 pr-3">
-                    <span className="w-[225px] font-sans text-[16px] font-semibold leading-[26px] text-black">
+                  <span className="flex min-w-0 flex-1 items-center py-3 pl-3 pr-2 md:pl-3 lg:py-0 lg:pl-5 lg:pr-3">
+                    <span className="font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[13px] md:leading-[20px] lg:w-[225px] lg:text-[16px] lg:leading-[26px]">
                       {service.title}
                     </span>
                   </span>
-                  <span className="flex w-[52px] shrink-0 items-center justify-center pr-4">
+                  <span className="flex w-[40px] shrink-0 items-center justify-center pr-3 md:w-[44px] lg:w-[52px] lg:pr-4">
                     {isActive ? <ServiceArrowIcon /> : null}
                   </span>
                 </button>
@@ -161,39 +175,44 @@ export default function InfluencerMarketingServicesSection() {
             })}
           </div>
 
-          {/* <div
-            className="h-[547px] w-px shrink-0 bg-[#D8D2D2]"
-            aria-hidden="true"
-          /> */}
+          <div
+            ref={previewPanelRef}
+            className="flex flex-col gap-5 max-md:w-full md:sticky md:top-20 md:min-w-0 md:flex-1 md:gap-4 lg:static lg:contents"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <div className="lg:contents">
+              <div className="relative h-[260px] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-md:mx-auto max-md:max-w-[560px] md:h-[220px] md:max-w-none md:rounded-[16px] lg:h-[547px] lg:w-[417px] lg:rounded-none">
+                <Image
+                  key={activeService.image}
+                  src={activeService.image}
+                  alt={activeService.title}
+                  fill
+                  className="object-cover transition-opacity duration-300"
+                  sizes="(max-width: 1024px) 50vw, 417px"
+                />
+              </div>
+            </div>
 
-          <div className="relative h-[547px] w-[417px] shrink-0 overflow-hidden bg-[#f5f0ea]">
-            <Image
-              key={activeService.image}
-              src={activeService.image}
-              alt={activeService.title}
-              fill
-              className="object-cover transition-opacity duration-300"
-            />
-          </div>
-
-          <div className="ml-10 flex min-h-[547px] flex-1 flex-col py-8">
-            <h3 className="font-sans text-[24px] font-semibold leading-[34px] text-black">
-              {activeService.title}
-            </h3>
-            <p className="mt-6 font-open-sans text-[16px] font-normal leading-[28px] text-black w-[382px]">
-              {activeService.description}
-            </p>
-            <button
-              type="button"
-              className="mt-10 flex items-center gap-2 self-start font-sans text-[16px] font-semibold leading-[20px] text-black"
-            >
-              Launch Your Campaign
-              <ServiceArrowIcon />
-            </button>
+            <div className="flex w-full flex-col items-center py-0 text-center max-md:max-w-[560px] max-md:self-center md:items-stretch md:text-left lg:ml-10 lg:min-h-[547px] lg:max-w-none lg:py-8">
+              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[18px] md:leading-[26px] lg:text-[24px] lg:leading-[34px]">
+                {activeService.title}
+              </h3>
+              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-md:mx-auto max-md:text-center md:mt-3 md:max-w-none md:text-[14px] md:leading-[24px] lg:mt-6 lg:w-[382px] lg:text-[16px] lg:leading-[28px]">
+                {activeService.description}
+              </p>
+              <button
+                type="button"
+                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-md:mx-auto md:mt-5 md:justify-start lg:mt-10 lg:text-[16px]"
+              >
+                Launch Your Campaign
+                <ServiceArrowIcon />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div className="h-px w-full bg-[#FFE4C8] my-15" />
+      <div className="my-8 h-px w-full bg-[#FFE4C8] md:my-12 lg:my-[60px]" />
     </section>
   );
 }

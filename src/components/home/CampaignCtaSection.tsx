@@ -21,37 +21,37 @@ function ConsultationArrowIcon({ className }: { className?: string }) {
 
 export default function CampaignCtaSection() {
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto flex max-w-[1366px] flex-col items-center px-10">
-        <h2 className="w-[924px] text-center font-sans text-[36px] font-semibold leading-[50px] text-black">
+    <section className="bg-white py-10 md:py-12 lg:py-16">
+      <div className="mx-auto flex w-full max-w-[1366px] flex-col items-center px-4 md:px-8 lg:px-10">
+        <h2 className="w-full max-w-[924px] text-center font-sans text-[24px] font-semibold leading-[32px] text-black md:text-[30px] md:leading-[40px] lg:text-[36px] lg:leading-[50px]">
           Ready to Build Your Influencer Campaign?
         </h2>
 
-        <p className="mt-4 w-[842px] text-center font-poppins text-[16px] font-normal leading-[28px] text-black">
+        <p className="mt-4 w-full max-w-[842px] text-center font-poppins text-[15px] font-normal leading-[26px] text-black md:text-[16px] md:leading-[28px]">
           Get a free consultation from Mediovate&apos;s influencer marketing
           experts. We&apos;ll identify the right creators, platforms, and
           strategy to grow your brand fast.
         </p>
 
-        <div className="mt-8 flex items-center gap-4">
+        <div className="mt-6 flex w-full max-w-[360px] flex-col items-stretch gap-3 max-md:max-w-[360px] md:mt-7 md:max-w-none md:flex-row md:items-center md:justify-center md:gap-3 lg:mt-8 lg:gap-4">
           <button
             type="button"
-            className="group flex h-[54px] w-[310px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
+            className="group flex h-[48px] w-full max-md:w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:h-[44px] md:w-auto md:shrink-0 md:px-5 lg:h-[54px] lg:w-[310px] lg:px-4"
           >
-            <span className="text-center font-sans text-[16px] font-semibold leading-[20px]">
+            <span className="text-center font-sans text-[15px] font-semibold leading-[20px] md:text-[14px] lg:text-[16px]">
               Book a Free Consultation
             </span>
-            <ConsultationArrowIcon className="transition-colors duration-300" />
+            <ConsultationArrowIcon className="shrink-0 transition-colors duration-300" />
           </button>
 
           <button
             type="button"
-            className="group flex h-[54px] w-[188px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white"
+            className="group flex h-[48px] w-full max-md:w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white md:h-[44px] md:w-auto md:shrink-0 md:px-5 lg:h-[54px] lg:w-[188px] lg:px-4"
           >
-            <span className="text-center font-sans text-[16px] font-semibold leading-[20px]">
+            <span className="text-center font-sans text-[15px] font-semibold leading-[20px] md:text-[14px] lg:text-[16px]">
               Call Us Now
             </span>
-            <ConsultationArrowIcon className="transition-colors duration-300" />
+            <ConsultationArrowIcon className="shrink-0 transition-colors duration-300" />
           </button>
         </div>
       </div>

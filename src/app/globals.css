@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@custom-variant max-md (@media (width < 48rem));
+@custom-variant max-lg (@media (width < 64rem));
+
 :root {
   --mediovate-tan: #a87c4f;
   --mediovate-brown: #5c3d2e;
@@ -23,10 +26,44 @@
   --font-poppins: var(--font-poppins);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   background: #ffffff;
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@utility section-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1366px;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+@media (min-width: 1366px) {
+  .section-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-container {
+    max-width: min(1366px, 90vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 html.lenis,

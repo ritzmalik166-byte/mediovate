@@ -139,16 +139,16 @@ function PlatformItem({
   stat?: string;
 }) {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex w-full flex-col items-center text-center">
       {icon}
-      <h3 className="mt-3 w-[264px] text-center font-sans text-[22px] font-semibold leading-[32px] text-black">
+      <h3 className="mt-3 w-full max-w-[264px] text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[20px] md:leading-[28px] lg:text-[22px] lg:leading-[32px]">
         {title}
       </h3>
-      <p className="text-center font-open-sans text-[16px] font-normal leading-[30px] text-black">
+      <p className="text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:text-[15px] lg:text-[16px] lg:leading-[30px]">
         {description}
       </p>
       {stat ? (
-        <p className="text-center font-open-sans text-[16px] font-bold leading-[30px] text-black">
+        <p className="text-center font-open-sans text-[15px] font-bold leading-[26px] text-black lg:text-[16px] lg:leading-[30px]">
           {stat}
         </p>
       ) : null}
@@ -156,9 +156,17 @@ function PlatformItem({
   );
 }
 
-function PlatformEllipse({ children }: { children: ReactNode }) {
+function PlatformEllipse({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="flex h-[472px] w-[472px] shrink-0 flex-col items-center justify-center rounded-[472px] border border-[#FFAC57] bg-white px-10">
+    <div
+      className={`flex w-full max-w-[340px] flex-col items-center justify-center rounded-[24px] border border-[#FFAC57] bg-white px-5 py-8 md:max-w-[400px] md:px-6 md:py-9 lg:h-[472px] lg:w-[472px] lg:max-w-none lg:shrink-0 lg:rounded-[472px] lg:px-10 ${className ?? ""}`}
+    >
       {children}
     </div>
   );
@@ -166,11 +174,11 @@ function PlatformEllipse({ children }: { children: ReactNode }) {
 
 export default function PlatformReachSection() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[1366px] px-10">
-        <div className="flex items-center justify-center">
-          <PlatformEllipse>
-            <div className="flex flex-col items-center gap-10">
+    <section className="overflow-hidden bg-white py-8 lg:py-0">
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
+        <div className="flex flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-0">
+          <PlatformEllipse className="order-2 lg:order-none">
+            <div className="flex w-full flex-col items-center gap-6 md:gap-8 lg:gap-10">
               <PlatformItem
                 icon={<InstagramIcon />}
                 title="Instagram Influencer Marketing"
@@ -186,16 +194,17 @@ export default function PlatformReachSection() {
             </div>
           </PlatformEllipse>
 
-          <div className="relative z-10 -mx-16 h-[472px] w-[472px] shrink-0 overflow-hidden rounded-full">
+          <div className="relative z-10 order-1 mx-auto aspect-square w-full max-w-[min(100%,300px)] shrink-0 overflow-hidden rounded-full md:max-w-[min(100%,360px)] lg:order-none lg:-mx-16 lg:aspect-auto lg:h-[472px] lg:w-[472px] lg:max-w-none">
             <Image
               src="/assets/Home/Platform&Reach.png"
               alt="Influencer reviewing content on her phone"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 360px, 472px"
             />
 
-            <div className="absolute inset-0 flex items-center justify-center px-10">
-              <p className="w-[407px] text-center font-sans text-[49px] font-medium leading-normal text-white">
+            <div className="absolute inset-0 flex items-center justify-center px-4 md:px-6 lg:px-10">
+              <p className="w-full text-center font-sans text-[26px] font-medium leading-[1.2] text-white md:text-[36px] lg:w-[407px] lg:text-[49px] lg:leading-normal">
                 Platform Reach
                 <br />
                 &amp; Impact
@@ -203,8 +212,8 @@ export default function PlatformReachSection() {
             </div>
           </div>
 
-          <PlatformEllipse>
-            <div className="flex flex-col items-center gap-10">
+          <PlatformEllipse className="order-3 lg:order-none">
+            <div className="flex w-full flex-col items-center gap-6 md:gap-8 lg:gap-10">
               <PlatformItem
                 icon={<LinkedInIcon />}
                 title="LinkedIn Influencer Marketing"
@@ -226,7 +235,7 @@ export default function PlatformReachSection() {
           </PlatformEllipse>
         </div>
       </div>
-      <div className="h-px w-full bg-[#FFE4C8] my-20" />
+      <div className="my-10 h-px w-full bg-[#FFE4C8] md:my-14 lg:my-20" />
     </section>
   );
 }

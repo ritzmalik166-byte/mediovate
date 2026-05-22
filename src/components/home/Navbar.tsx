@@ -51,7 +51,7 @@ function Logo() {
       alt="Mediovate"
       width={221}
       height={26}
-      className="object-contain"
+      className="object-contain max-lg:h-[36px] max-lg:w-auto max-lg:object-left lg:h-auto lg:w-auto"
       priority
     />
   );
@@ -87,13 +87,15 @@ export default function Navbar() {
         isLight ? "bg-white/95 shadow-sm backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[1366px] items-center justify-between">
-        <Logo />
+      <div className="section-container flex items-center justify-between py-3 max-lg:py-3 lg:py-0">
+        <div className="flex shrink-0 items-center justify-start max-lg:min-w-0">
+          <Logo />
+        </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex shrink-0 items-center gap-2 max-lg:gap-2 lg:gap-4">
           <button
             type="button"
-            className="group flex h-[48px] w-[287px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
+            className="group hidden h-[48px] w-[287px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] lg:flex"
           >
             <span className="w-[208px] text-center text-[14px] font-semibold leading-5 transition-colors duration-300">
               Book a Free Consultation
@@ -103,7 +105,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className={`group flex h-[48px] w-[188px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border bg-transparent transition-colors duration-300 ${
+            className={`group hidden h-[48px] w-[188px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border bg-transparent transition-colors duration-300 lg:flex ${
               isLight
                 ? "border-[#A87C4F] text-[#A87C4F] hover:bg-[#A87C4F] hover:text-white"
                 : "border-white text-white hover:bg-white hover:text-[#A87C4F]"
@@ -118,7 +120,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Open menu"
-            className="ml-2 cursor-pointer transition-opacity hover:opacity-80"
+            className="cursor-pointer transition-opacity hover:opacity-80 lg:ml-2"
           >
             <Image
               src="/assets/Home/hamburger_menu.png"
