@@ -36,7 +36,9 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${openSans.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
