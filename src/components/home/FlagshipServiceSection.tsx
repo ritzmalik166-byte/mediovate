@@ -96,7 +96,7 @@ export default function FlagshipServiceSection() {
             Influencer Marketing That Builds Brands &amp; Drives Sales
           </h3>
 
-          <div className="w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:text-[17px] md:leading-[28px] lg:col-start-1 lg:row-start-2 lg:h-[488px] lg:w-[407px] lg:text-left lg:text-[16px] lg:leading-[30px]">
+          <div className="w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:text-[17px] md:leading-[28px] lg:col-start-1 lg:row-start-2 lg:h-[461px] lg:w-[407px] lg:text-left lg:text-[16px] lg:leading-[30px]">
             <p>
               Influence means a lot more than mere visibility. It&apos;s about
               trust, culture, engagement, and driving real consumer action. We
@@ -162,8 +162,8 @@ export default function FlagshipServiceSection() {
             </p>
           </div>
 
-          <div className="flex w-full flex-col md:items-center md:text-center lg:col-start-3 lg:row-span-2 lg:row-start-1 lg:items-stretch lg:text-left">
-            <div className="relative h-[200px] w-full overflow-hidden rounded-[20px] md:h-[240px] lg:h-[280px]">
+          <div className="flex w-full flex-col md:items-center md:text-center lg:col-start-3 lg:row-span-2 lg:row-start-1 lg:self-stretch lg:items-stretch lg:text-left">
+            <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[280px]">
               <Image
                 src="/assets/Home/hands_up_lady.png"
                 alt="Influencer creating content for a brand campaign"
@@ -173,28 +173,30 @@ export default function FlagshipServiceSection() {
               />
             </div>
 
-            <ul className="mt-5 grid w-full grid-cols-2 gap-x-3 gap-y-4 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-x-4 md:text-[14px] md:leading-[22px] lg:mt-6 lg:flex lg:h-[210px] lg:flex-col lg:justify-between lg:gap-0 lg:text-[16px] lg:leading-[28px]">
-              {influencerFeatures.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 lg:w-full lg:gap-3"
-                >
-                  <span
-                    className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2.5"
-                    aria-hidden="true"
-                  />
-                  <span className="flex-1 text-left">{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-5 flex flex-1 flex-col md:mt-5 lg:mt-6">
+              <ul className="grid w-full grid-cols-2 gap-x-7 gap-y-7 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-x-4 md:gap-y-7 md:text-[14px] md:leading-[22px] lg:flex lg:flex-col lg:gap-7 lg:text-[16px] lg:leading-[24px]">
+                {influencerFeatures.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-7 lg:w-full lg:gap-3"
+                  >
+                    <span
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2.5"
+                      aria-hidden="true"
+                    />
+                    <span className="flex-1 text-left">{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-            <button
-              type="button"
-              className="group mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[14px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-7 lg:mt-8 lg:h-[54px] lg:w-[379px] lg:text-[16px]"
-            >
-              Launch Your Influencer Campaign
-              <CampaignArrowIcon />
-            </button>
+              <button
+                type="button"
+                className="group mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[14px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-7 lg:mt-auto lg:h-[54px] lg:w-[379px] lg:text-[16px]"
+              >
+                Launch Your Influencer Campaign
+                <CampaignArrowIcon />
+              </button>
+            </div>
           </div>
         </div>
       </div>
