@@ -214,7 +214,10 @@ export default function WhyChooseMediovateSection() {
   };
 
   return (
-    <section className="overflow-hidden bg-white pt-4 pb-10 md:pb-12 lg:pb-16">
+    <section
+      id="why-choose-mediovate"
+      className="scroll-mt-24 overflow-hidden bg-white pt-4 pb-10 md:pb-12 lg:pb-16"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center">
           <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">

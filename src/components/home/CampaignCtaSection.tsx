@@ -21,7 +21,10 @@ function ConsultationArrowIcon({ className }: { className?: string }) {
 
 export default function CampaignCtaSection() {
   return (
-    <section className="bg-white pt-5 pb-10 md:py-12 lg:py-16">
+    <section
+      id="campaign-cta"
+      className="scroll-mt-24 bg-white pt-5 pb-10 md:py-12 lg:py-16"
+    >
       <div className="mx-auto flex w-full max-w-[1366px] flex-col items-center px-4 md:px-8 lg:px-10">
         <h2 className="w-full max-w-[924px] text-center font-sans text-[24px] font-semibold leading-[32px] text-black md:text-[30px] md:leading-[40px] lg:text-[36px] lg:leading-[50px]">
           Ready to Build Your Influencer Campaign?

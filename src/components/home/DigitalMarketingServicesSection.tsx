@@ -171,7 +171,10 @@ export default function DigitalMarketingServicesSection() {
   const slideNumber = String(activeIndex + 1).padStart(2, "0");
 
   return (
-    <section className="overflow-hidden bg-white pt-5 pb-10 md:py-12 lg:py-16">
+    <section
+      id="digital-marketing"
+      className="scroll-mt-24 overflow-hidden bg-white pt-5 pb-10 md:py-12 lg:py-16"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-5 text-center md:gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-0 lg:text-left">
           <h2 className="w-full shrink-0 font-sans text-[24px] leading-[34px] text-black md:text-[30px] md:leading-[42px] lg:w-[520px] lg:text-[36px] lg:leading-[50px]">

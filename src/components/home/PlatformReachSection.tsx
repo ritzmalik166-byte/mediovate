@@ -174,7 +174,10 @@ function PlatformEllipse({
 
 export default function PlatformReachSection() {
   return (
-    <section className="overflow-hidden bg-white pt-4 pb-8 lg:py-0">
+    <section
+      id="platform-reach"
+      className="scroll-mt-24 overflow-hidden bg-white pt-4 pb-8 lg:py-0"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-0">
           <PlatformEllipse className="order-1 lg:order-none">

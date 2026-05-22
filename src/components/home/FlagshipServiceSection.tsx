@@ -59,7 +59,7 @@ function ListStarIcon() {
   );
 }
 
-function CampaignArrowIcon() {
+function CampaignArrowIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -68,13 +68,13 @@ function CampaignArrowIcon() {
       viewBox="0 0 33 9"
       fill="none"
       aria-hidden="true"
-      className="shrink-0"
+      className={`shrink-0 transition-colors duration-300 ${className ?? ""}`}
     >
-      <line y1="4.5" x2="25" y2="4.5" stroke="white" />
+      <line y1="4.5" x2="25" y2="4.5" stroke="currentColor" />
       <path
         d="M25.25 7.6084L25.25 1.3916L31.8291 4.5L25.25 7.6084Z"
-        fill="white"
-        stroke="white"
+        fill="currentColor"
+        stroke="currentColor"
       />
     </svg>
   );
@@ -82,7 +82,10 @@ function CampaignArrowIcon() {
 
 export default function FlagshipServiceSection() {
   return (
-    <section className="bg-white pt-4 pb-8 lg:py-0">
+    <section
+      id="flagship-service"
+      className="scroll-mt-24 bg-white pt-4 pb-8 lg:py-0"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[397px_407px_1fr] lg:items-start lg:gap-x-16 lg:gap-y-6">
           <h2 className="text-center font-sans text-[28px] font-medium leading-normal text-black md:text-[36px] lg:text-left lg:text-[50px]">
@@ -187,7 +190,7 @@ export default function FlagshipServiceSection() {
 
             <button
               type="button"
-              className="mt-6 flex h-[48px] w-full items-center justify-center gap-2 rounded-[50px] bg-[#A87C4F] px-4 text-center font-sans text-[14px] font-semibold leading-[20px] text-white transition-colors hover:bg-mediovate-tan-dark md:mt-7 lg:mt-8 lg:h-[54px] lg:w-[379px] lg:text-[16px]"
+              className="group mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[14px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-7 lg:mt-8 lg:h-[54px] lg:w-[379px] lg:text-[16px]"
             >
               Launch Your Influencer Campaign
               <CampaignArrowIcon />

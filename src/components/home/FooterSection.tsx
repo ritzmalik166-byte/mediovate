@@ -118,93 +118,89 @@ export default function FooterSection() {
   return (
     <footer className="bg-[#FFF5EB]">
       <div className="section-container pt-5 md:pt-12 lg:pt-16">
-        <div className="flex flex-col items-center gap-10 max-lg:text-center md:gap-12 lg:items-stretch lg:gap-16 lg:text-left">
-          <div className="flex w-full flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-start lg:gap-10">
-            <div className="flex w-full items-center justify-between max-lg:max-w-[400px] md:max-w-[480px] lg:w-[221px] lg:max-w-none lg:shrink-0 lg:justify-start">
-              <Image
-                src="/assets/Home/mediovate_logo.png"
-                alt="Mediovate"
-                width={221}
-                height={26}
-                className="block h-auto w-[160px] object-contain object-center md:w-[180px] lg:w-[221px] lg:object-left"
-                style={{ height: "auto" }}
-              />
-              <button
-                type="button"
-                onClick={scrollToTop}
-                aria-label="Back to top"
-                className="group flex h-[48px] w-[48px] shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] lg:hidden"
-              >
-                <BackToTopIcon />
-              </button>
-            </div>
+        <div className="grid w-full grid-cols-1 items-start gap-10 max-lg:text-center md:gap-12 lg:grid-cols-[221px_minmax(0,1fr)_164px] lg:gap-x-10 lg:gap-y-12 lg:text-left">
+          <div className="flex w-full items-center justify-between max-lg:mx-auto max-lg:max-w-[400px] md:max-w-[480px] lg:max-w-none lg:justify-start">
+            <Image
+              src="/assets/Home/mediovate_logo.png"
+              alt="Mediovate"
+              width={221}
+              height={26}
+              className="block h-auto w-[160px] object-contain object-center md:w-[180px] lg:w-[221px] lg:object-left"
+              style={{ height: "auto" }}
+            />
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="group flex h-[48px] w-[48px] shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] lg:hidden"
+            >
+              <BackToTopIcon />
+            </button>
+          </div>
 
-            <div className="flex flex-1 justify-center lg:justify-center">
-              <p className="w-full max-w-[340px] text-center font-open-sans text-[18px] font-normal leading-[28px] text-[#050102] md:max-w-[520px] md:text-[20px] md:leading-[34px] lg:h-[103px] lg:max-w-none lg:w-[770px] lg:text-left lg:text-[24px] lg:leading-[39px]">
-                Mediovate is the best influencer marketing agency in India,
-                delivering ROI-driven influencer campaigns, creative branding, and
-                full-service digital marketing solutions that grow brands at scale.
-              </p>
-            </div>
+          <div className="flex justify-center lg:col-start-2 lg:row-start-1">
+            <p className="w-full max-w-[340px] text-center font-open-sans text-[18px] font-normal leading-[28px] text-[#050102] md:max-w-[520px] md:text-[20px] md:leading-[34px] lg:h-[103px] lg:max-w-none lg:w-[770px] lg:text-left lg:text-[24px] lg:leading-[39px]">
+              Mediovate is the best influencer marketing agency in India,
+              delivering ROI-driven influencer campaigns, creative branding, and
+              full-service digital marketing solutions that grow brands at scale.
+            </p>
+          </div>
 
-            <div className="hidden w-[164px] shrink-0 justify-center lg:flex">
-              <button
-                type="button"
-                onClick={scrollToTop}
-                aria-label="Back to top"
-                className="group flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-full border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
-              >
-                <BackToTopIcon />
-              </button>
+          <div className="hidden justify-center lg:col-start-3 lg:row-start-1 lg:flex">
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="group flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-full border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
+            >
+              <BackToTopIcon />
+            </button>
+          </div>
+
+          <div className="w-full max-lg:mx-auto max-lg:flex max-lg:max-w-[400px] max-lg:flex-col max-lg:items-center md:max-w-[480px] lg:col-start-1 lg:row-start-2 lg:max-w-none">
+            <FooterColumn title="Get in Touch">
+              <div className="font-open-sans text-[15px] font-normal leading-[32px] text-[#050102] max-lg:text-center md:text-[16px] md:leading-[36px] lg:text-left lg:leading-[38px]">
+                <p>hello@mediovateagency.com</p>
+                <p>+91 12345 67890</p>
+              </div>
+            </FooterColumn>
+          </div>
+
+          <div className="flex w-full justify-center lg:col-start-2 lg:row-start-2 lg:justify-start">
+            <div className="grid w-full max-w-[770px] grid-cols-1 justify-items-center gap-8 max-lg:text-center sm:grid-cols-2 md:gap-10 lg:flex lg:items-start lg:justify-items-start lg:gap-x-12 lg:text-left">
+              <FooterColumn title="Influencer Marketing">
+                <FooterLinkList
+                  items={influencerMarketingLinks}
+                  className="w-full lg:h-[246px] lg:w-[225px]"
+                />
+              </FooterColumn>
+
+              <FooterColumn title="Services">
+                <FooterLinkList
+                  items={servicesLinks}
+                  className="w-full lg:h-[246px] lg:w-[225px]"
+                />
+              </FooterColumn>
+
+              <FooterColumn title="Company" className="sm:col-span-2 lg:col-span-1">
+                <FooterLinkList
+                  items={companyLinks}
+                  className="w-full lg:h-[138px] lg:w-[168px]"
+                />
+              </FooterColumn>
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center gap-10 md:gap-12 lg:flex-row lg:items-start lg:gap-10">
-            <div className="w-full max-lg:flex max-lg:flex-col max-lg:items-center lg:w-[221px] lg:shrink-0">
-              <FooterColumn title="Get in Touch">
-                <div className="font-open-sans text-[15px] font-normal leading-[32px] text-[#050102] max-lg:text-center md:text-[16px] md:leading-[36px] lg:text-left lg:leading-[38px]">
-                  <p>hello@mediovateagency.com</p>
-                  <p>+91 12345 67890</p>
-                </div>
-              </FooterColumn>
-            </div>
-
-            <div className="flex w-full flex-1 justify-center max-lg:justify-center">
-              <div className="grid w-full max-w-[770px] grid-cols-1 justify-items-center gap-8 max-lg:text-center sm:grid-cols-2 md:gap-10 lg:flex lg:items-start lg:justify-items-start lg:gap-x-12 lg:text-left">
-                <FooterColumn title="Influencer Marketing">
-                  <FooterLinkList
-                    items={influencerMarketingLinks}
-                    className="w-full lg:h-[246px] lg:w-[225px]"
-                  />
-                </FooterColumn>
-
-                <FooterColumn title="Services">
-                  <FooterLinkList
-                    items={servicesLinks}
-                    className="w-full lg:h-[246px] lg:w-[225px]"
-                  />
-                </FooterColumn>
-
-                <FooterColumn title="Company" className="sm:col-span-2 lg:col-span-1">
-                  <FooterLinkList
-                    items={companyLinks}
-                    className="w-full lg:h-[138px] lg:w-[168px]"
-                  />
-                </FooterColumn>
-              </div>
-            </div>
-
-            <div className="flex w-full justify-center lg:w-[164px] lg:shrink-0">
-              <button
-                type="button"
-                className="group flex h-[140px] w-[140px] cursor-pointer flex-col items-center justify-center rounded-full border border-[#F3BB82] bg-transparent px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[150px] md:w-[150px] lg:h-[164px] lg:w-[164px] lg:px-4"
-              >
-                <ConsultationCircleArrowIcon />
-                <span className="mt-2 w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] md:w-[130px] md:text-[14px] lg:w-[153px] lg:text-[15px] lg:leading-[20px]">
-                  Get A Free Consultation
-                </span>
-              </button>
-            </div>
+          <div className="flex w-full justify-center lg:col-start-3 lg:row-start-2 lg:justify-start">
+            <button
+              type="button"
+              className="group flex h-[140px] w-[140px] cursor-pointer flex-col items-center justify-center rounded-full border border-[#F3BB82] bg-transparent px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[150px] md:w-[150px] lg:h-[164px] lg:w-[164px] lg:px-4"
+            >
+              <ConsultationCircleArrowIcon />
+              <span className="mt-2 w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] md:w-[130px] md:text-[14px] lg:w-[153px] lg:text-[15px] lg:leading-[20px]">
+                Get A Free Consultation
+              </span>
+            </button>
           </div>
         </div>
 

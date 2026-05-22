@@ -13,6 +13,8 @@ export default function LenisProvider({
       autoRaf: true,
       duration: 1.2,
       smoothWheel: true,
+      allowNestedScroll: true,
+      prevent: (node) => Boolean(node.closest("#site-navigation")),
     });
 
     const onLenisScroll = ({ scroll }: { scroll: number }) => {
@@ -22,9 +24,11 @@ export default function LenisProvider({
     };
 
     lenis.on("scroll", onLenisScroll);
+    window.__lenis = lenis;
 
     return () => {
       lenis.off("scroll", onLenisScroll);
+      delete window.__lenis;
       lenis.destroy();
     };
   }, []);

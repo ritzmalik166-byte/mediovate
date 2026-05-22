@@ -17,7 +17,10 @@ const industries = [
 
 export default function IndustriesWeServeSection() {
   return (
-    <section className="border-y border-[#FFE4C8] bg-white pt-5 pb-10 md:py-12 lg:py-16">
+    <section
+      id="industries"
+      className="scroll-mt-24 border-y border-[#FFE4C8] bg-white pt-5 pb-10 md:py-12 lg:py-16"
+    >
       <div className="mx-auto flex w-full max-w-[1366px] flex-col items-center px-4 md:px-8 lg:px-10">
         <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">
           Industries We Serve

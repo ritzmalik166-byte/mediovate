@@ -136,7 +136,10 @@ export default function InfluencerMarketingServicesSection() {
   };
 
   return (
-    <section className="bg-white pt-4 pb-8 md:py-0">
+    <section
+      id="influencer-marketing"
+      className="scroll-mt-24 bg-white pt-4 pb-8 md:py-0"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <h2 className="text-center font-sans text-[28px] font-medium leading-[36px] text-black md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-normal">
           Our Influencer Marketing Services

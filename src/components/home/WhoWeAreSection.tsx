@@ -54,10 +54,10 @@ function CampaignCta() {
   return (
     <button
       type="button"
-      className="group flex h-[140px] w-[140px] shrink-0 flex-col items-center justify-center rounded-full border border-[#FFE4C8] bg-white px-3 transition-colors hover:border-mediovate-tan md:h-[152px] md:w-[152px] lg:h-[164px] lg:w-[164px]"
+      className="group flex h-[140px] w-[140px] shrink-0 cursor-pointer flex-col items-center justify-center rounded-full border border-[#FFE4C8] bg-white px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[152px] md:w-[152px] lg:h-[164px] lg:w-[164px] lg:px-4"
     >
       <div
-        className="flex w-full items-center justify-center"
+        className="flex w-full items-center justify-center transition-colors duration-300"
         aria-hidden="true"
       >
         <svg
@@ -66,22 +66,22 @@ function CampaignCta() {
           height="30"
           viewBox="0 0 30 30"
           fill="none"
-          className="-rotate-[1.446deg]"
+          className="-rotate-[1.446deg] transition-colors duration-300"
         >
           <line
             x1="3.1511"
             y1="26.3204"
             x2="20.9989"
             y2="8.81451"
-            stroke="black"
+            stroke="currentColor"
           />
           <path
             d="M26.7101 3.21259L23.5493 11.7717L18.0915 6.20733L26.7101 3.21259Z"
-            fill="black"
+            fill="currentColor"
           />
         </svg>
       </div>
-      <span className="mt-2 w-full max-w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] text-black md:max-w-[140px] md:text-[14px] md:leading-[19px] lg:max-w-[153px] lg:text-[16px] lg:leading-[20px]">
+      <span className="mt-2 w-full max-w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] transition-colors duration-300 md:max-w-[140px] md:text-[14px] md:leading-[19px] lg:max-w-[153px] lg:text-[16px] lg:leading-[20px]">
         Start Your
         <br />
         Campaign Explore Services
@@ -92,7 +92,10 @@ function CampaignCta() {
 
 export default function WhoWeAreSection() {
   return (
-    <section className="bg-white pt-4 pb-8 md:py-10 lg:py-11">
+    <section
+      id="who-we-are"
+      className="scroll-mt-24 bg-white pt-4 pb-8 md:py-10 lg:py-11"
+    >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-stretch gap-8 max-lg:gap-8 lg:flex-row lg:items-start lg:gap-0">
           <div className="w-full shrink-0 max-lg:order-1 lg:w-auto">
