@@ -8,7 +8,7 @@ export default function HeroSection() {
       className="relative box-border h-[649px] max-h-[649px] w-full scroll-mt-24 overflow-hidden max-lg:h-[580px] max-lg:min-h-[580px] max-lg:max-h-none md:min-h-[580px] lg:h-[649px] lg:max-h-[649px]"
     >
       <Image
-        src="/assets/Home/Mediovate.jpg"
+        src="/assets/Home/mediovate hero banner.jpg"
         alt=""
         fill
         priority
