@@ -107,7 +107,7 @@ export default function OtherServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
 
   return (
-    <section className="overflow-hidden bg-white py-8 lg:py-0">
+    <section className="overflow-hidden bg-white pt-4 pb-8 lg:py-0">
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center">
           <span className="text-center font-sans text-[14px] font-semibold uppercase leading-normal text-[#A87C4F] md:text-[15px] lg:text-[16px]">

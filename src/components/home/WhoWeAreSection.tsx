@@ -54,10 +54,10 @@ function CampaignCta() {
   return (
     <button
       type="button"
-      className="group flex h-[140px] w-[140px] shrink-0 flex-col items-center justify-center gap-3 rounded-full border border-[#FFE4C8] bg-white transition-colors hover:border-mediovate-tan md:h-[152px] md:w-[152px] lg:h-[164px] lg:w-[164px]"
+      className="group flex h-[140px] w-[140px] shrink-0 flex-col items-center justify-center rounded-full border border-[#FFE4C8] bg-white px-3 transition-colors hover:border-mediovate-tan md:h-[152px] md:w-[152px] lg:h-[164px] lg:w-[164px]"
     >
       <div
-        className="flex h-[9px] w-[33px] shrink-0 items-center justify-center overflow-visible"
+        className="flex w-full items-center justify-center"
         aria-hidden="true"
       >
         <svg
@@ -81,7 +81,7 @@ function CampaignCta() {
           />
         </svg>
       </div>
-      <span className="mt-4 w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] text-black md:w-[140px] md:text-[14px] md:leading-[19px] lg:w-[153px] lg:text-[16px] lg:leading-[20px]">
+      <span className="mt-2 w-full max-w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] text-black md:max-w-[140px] md:text-[14px] md:leading-[19px] lg:max-w-[153px] lg:text-[16px] lg:leading-[20px]">
         Start Your
         <br />
         Campaign Explore Services
@@ -92,7 +92,7 @@ function CampaignCta() {
 
 export default function WhoWeAreSection() {
   return (
-    <section className="bg-white py-8 md:py-10 lg:py-11">
+    <section className="bg-white pt-4 pb-8 md:py-10 lg:py-11">
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-stretch gap-8 max-lg:gap-8 lg:flex-row lg:items-start lg:gap-0">
           <div className="w-full shrink-0 max-lg:order-1 lg:w-auto">
@@ -148,7 +148,7 @@ export default function WhoWeAreSection() {
           </div>
         </div>
       </div>
-      <div className="my-8 h-px w-full bg-[#FFE4C8] md:my-10 lg:my-11" />
+      <div className="mt-4 mb-8 h-px w-full bg-[#FFE4C8] md:my-10 lg:my-11" />
     </section>
   );
 }

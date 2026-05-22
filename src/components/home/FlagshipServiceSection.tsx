@@ -82,7 +82,7 @@ function CampaignArrowIcon() {
 
 export default function FlagshipServiceSection() {
   return (
-    <section className="bg-white py-8 lg:py-0">
+    <section className="bg-white pt-4 pb-8 lg:py-0">
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[397px_407px_1fr] lg:items-start lg:gap-x-16 lg:gap-y-6">
           <h2 className="text-center font-sans text-[28px] font-medium leading-normal text-black md:text-[36px] lg:text-left lg:text-[50px]">
@@ -170,19 +170,17 @@ export default function FlagshipServiceSection() {
               />
             </div>
 
-            <ul className="mt-5 flex w-full flex-col gap-3 text-left font-open-sans text-[15px] font-normal leading-[24px] text-black md:mx-auto md:max-w-[520px] md:items-center md:gap-3.5 md:text-[15px] lg:mt-6 lg:mx-0 lg:h-[210px] lg:max-w-none lg:items-stretch lg:justify-between lg:gap-0 lg:text-[16px] lg:leading-[28px]">
+            <ul className="mt-5 grid w-full grid-cols-2 gap-x-3 gap-y-4 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-x-4 md:text-[14px] md:leading-[22px] lg:mt-6 lg:flex lg:h-[210px] lg:flex-col lg:justify-between lg:gap-0 lg:text-[16px] lg:leading-[28px]">
               {influencerFeatures.map((feature) => (
                 <li
                   key={feature}
-                  className="flex w-full items-start gap-3 md:w-fit md:max-w-full lg:w-full"
+                  className="flex items-start gap-2 lg:w-full lg:gap-3"
                 >
                   <span
-                    className="mt-2 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2.5"
+                    className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2.5"
                     aria-hidden="true"
                   />
-                  <span className="flex-1 text-left md:flex-none lg:flex-1">
-                    {feature}
-                  </span>
+                  <span className="flex-1 text-left">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -197,7 +195,7 @@ export default function FlagshipServiceSection() {
           </div>
         </div>
       </div>
-      <div className="my-8 h-px w-full bg-[#FFE4C8] md:my-10 lg:my-11" />
+      <div className="mt-4 mb-8 h-px w-full bg-[#FFE4C8] md:my-10 lg:my-11" />
     </section>
   );
 }

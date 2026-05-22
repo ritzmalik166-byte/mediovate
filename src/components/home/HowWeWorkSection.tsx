@@ -191,7 +191,7 @@ function MobileProcessStep({
 
 export default function HowWeWorkSection() {
   return (
-    <section className="bg-[#A87C4F] py-10 md:py-12 lg:h-[811px] lg:py-0">
+    <section className="bg-[#A87C4F] pt-5 pb-10 md:py-12 lg:h-[811px] lg:py-0">
       <div className="mx-auto flex h-full max-w-[1366px] flex-col px-4 md:px-8 lg:px-10 lg:py-14">
         <div className="flex flex-col items-center text-white">
           <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] text-white md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[54px]">

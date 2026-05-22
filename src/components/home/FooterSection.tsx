@@ -117,7 +117,7 @@ function scrollToTop() {
 export default function FooterSection() {
   return (
     <footer className="bg-[#FFF5EB]">
-      <div className="section-container pt-10 md:pt-12 lg:pt-16">
+      <div className="section-container pt-5 md:pt-12 lg:pt-16">
         <div className="flex flex-col items-center gap-10 max-lg:text-center md:gap-12 lg:items-stretch lg:gap-16 lg:text-left">
           <div className="flex w-full flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-start lg:gap-10">
             <div className="flex w-full items-center justify-between max-lg:max-w-[400px] md:max-w-[480px] lg:w-[221px] lg:max-w-none lg:shrink-0 lg:justify-start">

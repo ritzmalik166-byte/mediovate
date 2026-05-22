@@ -174,10 +174,10 @@ function PlatformEllipse({
 
 export default function PlatformReachSection() {
   return (
-    <section className="overflow-hidden bg-white py-8 lg:py-0">
+    <section className="overflow-hidden bg-white pt-4 pb-8 lg:py-0">
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-0">
-          <PlatformEllipse className="order-2 lg:order-none">
+          <PlatformEllipse className="order-1 lg:order-none">
             <div className="flex w-full flex-col items-center gap-6 md:gap-8 lg:gap-10">
               <PlatformItem
                 icon={<InstagramIcon />}
@@ -194,7 +194,7 @@ export default function PlatformReachSection() {
             </div>
           </PlatformEllipse>
 
-          <div className="relative z-10 order-1 mx-auto aspect-square w-full max-w-[min(100%,300px)] shrink-0 overflow-hidden rounded-full md:max-w-[min(100%,360px)] lg:order-none lg:-mx-16 lg:aspect-auto lg:h-[472px] lg:w-[472px] lg:max-w-none">
+          <div className="relative z-10 order-2 mx-auto aspect-square w-full max-w-[min(100%,300px)] shrink-0 overflow-hidden rounded-full md:max-w-[min(100%,360px)] lg:order-none lg:-mx-16 lg:aspect-auto lg:h-[472px] lg:w-[472px] lg:max-w-none">
             <Image
               src="https://otherassets.blob.core.windows.net/mediovate/platform&Reach.png"
               alt="Influencer reviewing content on her phone"
@@ -236,7 +236,7 @@ export default function PlatformReachSection() {
           </PlatformEllipse>
         </div>
       </div>
-      <div className="my-10 h-px w-full bg-[#FFE4C8] md:my-14 lg:my-20" />
+      <div className="mt-4 mb-10 h-px w-full bg-[#FFE4C8] md:my-14 lg:my-20" />
     </section>
   );
 }

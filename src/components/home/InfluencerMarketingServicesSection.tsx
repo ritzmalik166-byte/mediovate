@@ -136,7 +136,7 @@ export default function InfluencerMarketingServicesSection() {
   };
 
   return (
-    <section className="bg-white py-8 md:py-0">
+    <section className="bg-white pt-4 pb-8 md:py-0">
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <h2 className="text-center font-sans text-[28px] font-medium leading-[36px] text-black md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-normal">
           Our Influencer Marketing Services
@@ -212,7 +212,7 @@ export default function InfluencerMarketingServicesSection() {
           </div>
         </div>
       </div>
-      <div className="my-8 h-px w-full bg-[#FFE4C8] md:my-12 lg:my-[60px]" />
+      <div className="mt-4 mb-8 h-px w-full bg-[#FFE4C8] md:my-12 lg:my-[60px]" />
     </section>
   );
 }
