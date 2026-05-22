@@ -52,6 +52,7 @@ function Logo() {
       width={221}
       height={26}
       className="object-contain max-lg:h-[36px] max-lg:w-auto max-lg:object-left lg:h-auto lg:w-auto"
+      style={{ width: "auto" }}
       priority
     />
   );

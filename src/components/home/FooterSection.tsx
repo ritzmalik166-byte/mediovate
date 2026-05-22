@@ -127,6 +127,7 @@ export default function FooterSection() {
                 width={221}
                 height={26}
                 className="block h-auto w-[160px] object-contain object-center md:w-[180px] lg:w-[221px] lg:object-left"
+                style={{ height: "auto" }}
               />
               <button
                 type="button"

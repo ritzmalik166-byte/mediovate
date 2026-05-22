@@ -137,6 +137,7 @@ export default function WhoWeAreSection() {
                   alt="Influencer filming content for a brand campaign"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 

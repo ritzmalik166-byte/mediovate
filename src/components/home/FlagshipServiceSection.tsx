@@ -166,6 +166,7 @@ export default function FlagshipServiceSection() {
                 alt="Influencer creating content for a brand campaign"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
 
