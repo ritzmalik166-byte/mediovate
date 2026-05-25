@@ -8,82 +8,82 @@ const slides: {
   description: ReactNode;
   image: string;
 }[] = [
-  {
-    title: "Search Engine Optimisation (SEO)",
-    description: (
-      <>
-        Become dominant on Google with our white-hat SEO services :{" "}
-        <strong className="font-bold">
-          on-page optimisation, technical SEO audits, local SEO, link building
-        </strong>
-        , and <strong className="font-bold">keyword strategy</strong> that
-        yields sustained organic traffic and quality leads every month.
-      </>
-    ),
-    image: "/assets/Home/seo_image.png",
-  },
-  {
-    title: "PPC & Google Ads Management",
-    description: (
-      <>
-        High ROI pay per click advertising for{" "}
-        <strong className="font-bold">
-          Google Search, Display, Shopping, YouTube
-        </strong>{" "}
-        and others with targeted campaigns, efficient bid management, split
-        tested ads and conversion optimised landing pages, thereby reducing the
-        Cost Per Acquisition.
-      </>
-    ),
-    image: "/assets/Home/seo_image.png",
-  },
-  {
-    title: "Social Media Marketing (SMM)",
-    description: (
-      <>
-        From organic content calendar planning to community management and
-        effective Meta Ads for organic audience expansion and tangible business
-        outcome, we design strategy on{" "}
-        <strong className="font-bold">Instagram, Facebook, LinkedIn,</strong> and{" "}
-        <strong className="font-bold">YouTube.</strong>
-      </>
-    ),
-    image: "/assets/Home/seo_image.png",
-  },
-  
-  {
-    title: "Content Marketing & SEO Blogging",
-    description: (
-      <>
-        Organic SEO focused content marketing:{" "}
-        <strong className="font-bold">
-          pillar pages, topic clusters, blog strategies,
-        </strong>{" "}
-        and{" "}
-        <strong className="font-bold">
-          thought-leadership content, email newsletters
-        </strong>{" "}
-        that drive rankings on search engines, education and nurturing of leads
-        throughout the sales funnel.
-      </>
-    ),
-    image: "/assets/Home/seo_image.png",
-  },
-  {
-    title: "Website Design & Development",
-    description: (
-      <>
-        Responsive and Google Core Web Vitals optimised design with best possible
-        speed and conversion focused development tailored for high quality organic
-        traffic and enhanced lead generation across{" "}
-        <strong className="font-bold">
-          landing pages, e-commerce sites, and corporate websites.
-        </strong>
-      </>
-    ),
-    image: "/assets/Home/seo_image.png",
-  },
-];
+    {
+      title: "Search Engine Optimisation (SEO)",
+      description: (
+        <>
+          Become dominant on Google with our white-hat SEO services :{" "}
+          <strong className="font-bold">
+            on-page optimisation, technical SEO audits, local SEO, link building
+          </strong>
+          , and <strong className="font-bold">keyword strategy</strong> that
+          yields sustained organic traffic and quality leads every month.
+        </>
+      ),
+      image: "/assets/Home/seo_image.png",
+    },
+    {
+      title: "PPC & Google Ads Management",
+      description: (
+        <>
+          High ROI pay per click advertising for{" "}
+          <strong className="font-bold">
+            Google Search, Display, Shopping, YouTube
+          </strong>{" "}
+          and others with targeted campaigns, efficient bid management, split
+          tested ads and conversion optimised landing pages, thereby reducing the
+          Cost Per Acquisition.
+        </>
+      ),
+      image: "/assets/Home/seo_image.png",
+    },
+    {
+      title: "Social Media Marketing (SMM)",
+      description: (
+        <>
+          From organic content calendar planning to community management and
+          effective Meta Ads for organic audience expansion and tangible business
+          outcome, we design strategy on{" "}
+          <strong className="font-bold">Instagram, Facebook, LinkedIn,</strong> and{" "}
+          <strong className="font-bold">YouTube.</strong>
+        </>
+      ),
+      image: "/assets/Home/seo_image.png",
+    },
+
+    {
+      title: "Content Marketing & SEO Blogging",
+      description: (
+        <>
+          Organic SEO focused content marketing:{" "}
+          <strong className="font-bold">
+            pillar pages, topic clusters, blog strategies,
+          </strong>{" "}
+          and{" "}
+          <strong className="font-bold">
+            thought-leadership content, email newsletters
+          </strong>{" "}
+          that drive rankings on search engines, education and nurturing of leads
+          throughout the sales funnel.
+        </>
+      ),
+      image: "/assets/Home/seo_image.png",
+    },
+    {
+      title: "Website Design & Development",
+      description: (
+        <>
+          Responsive and Google Core Web Vitals optimised design with best possible
+          speed and conversion focused development tailored for high quality organic
+          traffic and enhanced lead generation across{" "}
+          <strong className="font-bold">
+            landing pages, e-commerce sites, and corporate websites.
+          </strong>
+        </>
+      ),
+      image: "/assets/Home/seo_image.png",
+    },
+  ];
 
 function LeadsArrowIcon({ className }: { className?: string }) {
   return (
@@ -256,11 +256,10 @@ export default function DigitalMarketingServicesSection() {
               src={slides[activeIndex].image}
               alt={slides[activeIndex].title}
               fill
-              className={`object-cover ${
-                isImageTransitioning
+              className={`object-cover ${isImageTransitioning
                   ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
                   : ""
-              }`}
+                }`}
               sizes="(max-width: 1024px) 100vw, 835px"
             />
             {outgoingImageIndex !== null ? (
@@ -268,6 +267,7 @@ export default function DigitalMarketingServicesSection() {
                 src={slides[outgoingImageIndex].image}
                 alt=""
                 fill
+                sizes="(max-width: 1024px) 100vw, 835px"
                 className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
                 aria-hidden="true"
               />

@@ -9,11 +9,10 @@ export default function HeroSection() {
     >
       <Image
         src="/assets/Home/banner-06.jpg"
-        alt=""
         fill
-        priority
-        className="object-cover lg:hidden"
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 50vw"
+        alt="banner"
+        className="object-cover object-center"
       />
       <Image
         src="/assets/Home/mediovate hero banner.jpg"

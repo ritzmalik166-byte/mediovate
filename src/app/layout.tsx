@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Mediovate | Best Influencer Marketing Agency in India",
   description:
     "Mediovate — creative & digital growth solutions. India's best influencer marketing agency.",
+  icons: {
+    icon: "/assets/Home/m_logo.png",
+    apple: "/assets/Home/m_logo.png",
+  },
 };
 
 export default function RootLayout({
