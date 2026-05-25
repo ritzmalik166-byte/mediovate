@@ -118,29 +118,29 @@ export default function OtherServicesSection() {
           </span>
 
           <h2 className="mt-4 w-full text-center">
-            <span className="mx-auto block w-full font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:w-[605px] lg:text-[60px] lg:leading-[72px]">
+            <span className="mx-auto block w-full font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:w-full xl:w-[605px] xl:text-[60px] xl:leading-[72px]">
               Creative Services &amp;
             </span>
-            <span className="block font-sans text-[32px] font-medium leading-[40px] text-[#A87C4F] md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">
+            <span className="block font-sans text-[32px] font-medium leading-[40px] text-[#A87C4F] md:text-[44px] md:leading-[52px] xl:text-[60px] xl:leading-[72px]">
               Digital Marketing
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:max-w-[600px] md:text-[16px] md:leading-[28px] lg:mt-6 lg:h-[68px] lg:w-[727px] lg:max-w-none">
+          <p className="mx-auto mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:max-w-[600px] md:text-[16px] md:leading-[28px] lg:mt-6 xl:mt-6 xl:h-[68px] xl:w-[727px] xl:max-w-none">
             From influencer collaborations to full-scale digital campaigns,
             Mediovate delivers complete marketing solutions for modern brands.
           </p>
         </div>
       </div>
 
-      <div className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-12 lg:py-14">
-        <div className="mx-auto flex max-w-[1366px] flex-col items-stretch gap-8 px-4 md:gap-10 md:px-8 lg:flex-row lg:items-start lg:justify-center lg:gap-0 lg:px-10">
-          <div className="w-full shrink-0 pt-0 md:max-w-[560px] md:self-center lg:w-[320px] lg:max-w-none lg:pt-4">
-            <h3 className="w-full text-center font-sans text-[24px] leading-[34px] text-black md:text-[28px] md:leading-[40px] lg:w-[363px] lg:text-left lg:text-[36px] lg:leading-[50px]">
+      <div className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-10 lg:py-12 xl:mt-12 xl:py-14">
+        <div className="mx-auto flex max-w-[1366px] flex-col items-stretch gap-8 px-4 md:gap-10 md:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-8 lg:gap-y-8 lg:px-8 xl:flex xl:flex-row xl:justify-center xl:gap-0 xl:px-10">
+          <div className="w-full shrink-0 pt-0 md:max-w-[560px] md:self-center lg:col-start-1 lg:row-start-1 lg:w-full lg:max-w-none lg:pt-0 xl:w-[320px] xl:max-w-none xl:pt-4">
+            <h3 className="w-full text-center font-sans text-[24px] leading-[34px] text-black md:text-[28px] md:leading-[40px] lg:text-left xl:w-[363px] xl:text-[36px] xl:leading-[50px]">
               <span className="font-extrabold">Creative Agency Services</span>{" "}
               <span className="font-medium">That Elevate Your Brand Identity</span>
             </h3>
-            <p className="mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:text-[16px] md:leading-[28px] lg:mt-6 lg:h-[141px] lg:w-[324px] lg:text-left">
+            <p className="mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:text-[16px] md:leading-[28px] lg:text-left xl:mt-6 xl:h-[141px] xl:w-[324px]">
               As the best creative branding agency in India, we don&apos;t just
               make things look good we craft creative solutions that communicate
               your brand&apos;s value, personality, and purpose with clarity and
@@ -148,7 +148,7 @@ export default function OtherServicesSection() {
             </p>
             <button
               type="button"
-              className="group mx-auto mt-6 flex h-[48px] w-full max-w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[15px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-8 md:max-w-[400px] lg:mx-0 lg:mt-14 lg:h-[54px] lg:w-[296px] lg:max-w-none lg:text-[16px]"
+              className="group mx-auto mt-6 flex h-[48px] w-full max-w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[15px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-8 md:max-w-[400px] lg:mx-0 lg:mt-8 xl:mt-14 xl:h-[54px] xl:w-[296px] xl:max-w-none xl:text-[16px]"
             >
               <span className="transition-colors duration-300">
                 Get a Creative Proposal
@@ -157,7 +157,7 @@ export default function OtherServicesSection() {
             </button>
           </div>
 
-          <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[300px] md:max-w-[560px] md:self-center lg:mx-10 lg:h-[519px] lg:w-[367px] lg:max-w-none">
+          <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[300px] md:max-w-[560px] md:self-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:h-full lg:min-h-[320px] lg:w-full lg:max-w-none xl:mx-10 xl:h-[519px] xl:w-[367px]">
             <Image
               src="/assets/Home/logo design 1.png"
               alt="Creative brand identity design showcase"
@@ -167,7 +167,7 @@ export default function OtherServicesSection() {
             />
           </div>
 
-          <div className="w-full shrink-0 md:max-w-[640px] md:self-center lg:w-[520px] lg:max-w-none">
+          <div className="w-full shrink-0 md:max-w-[640px] md:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]">
             {creativeServices.map((service, index) => {
               const isExpanded = expandedIndex === index;
 
@@ -182,23 +182,23 @@ export default function OtherServicesSection() {
                       setExpandedIndex(isExpanded ? 0 : index)
                     }
                     aria-expanded={isExpanded}
-                    className="relative flex w-full cursor-pointer flex-col py-4 pr-10 text-left md:py-5 lg:flex-row lg:items-start lg:justify-between lg:gap-6 lg:py-6 lg:pr-0"
+                    className="relative flex w-full cursor-pointer flex-col py-4 pr-10 text-left md:py-5 xl:flex-row xl:items-start xl:justify-between xl:gap-6 xl:py-6 xl:pr-0"
                   >
                     <div
-                      className={`flex w-full gap-3 md:gap-4 lg:flex-1 ${
+                      className={`flex w-full gap-3 md:gap-4 ${
                         isExpanded
-                          ? "flex-col lg:flex-row lg:items-start"
+                          ? "flex-col xl:flex-row xl:items-start xl:gap-6"
                           : "flex-row items-start"
                       }`}
                     >
-                      <div className="flex min-w-0 flex-1 items-start gap-3">
-                        <span className="shrink-0 font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] lg:text-[16px] lg:leading-[26px]">
+                      <div className="flex min-w-0 flex-1 items-start gap-3 xl:min-w-[159px] xl:flex-none">
+                        <span className="shrink-0 font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] xl:text-[16px] xl:leading-[26px]">
                           {service.id}.
                         </span>
                         <span
-                          className={`font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] lg:text-[16px] lg:leading-[26px] ${
+                          className={`min-w-0 font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] xl:text-[16px] xl:leading-[26px] ${
                             isExpanded
-                              ? "lg:h-[69px] lg:w-[159px] lg:shrink-0"
+                              ? "xl:h-[69px] xl:w-[159px] xl:shrink-0"
                               : "flex-1"
                           }`}
                         >
@@ -206,12 +206,12 @@ export default function OtherServicesSection() {
                         </span>
                       </div>
                       {isExpanded ? (
-                        <p className="w-full pl-7 font-open-sans text-[14px] font-normal leading-[24px] text-black md:pl-8 md:text-[14px] md:leading-[25px] lg:pl-0 lg:h-[180px] lg:w-[270px] lg:shrink-0 lg:text-[15px] lg:leading-[26px]">
+                        <p className="w-full pl-7 font-open-sans text-[14px] font-normal leading-[24px] text-black md:pl-8 md:text-[14px] md:leading-[25px] xl:pl-0 xl:h-[180px] xl:w-[270px] xl:shrink-0 xl:text-[15px] xl:leading-[26px]">
                           {service.description}
                         </p>
                       ) : null}
                     </div>
-                    <span className="absolute right-0 top-4 font-sans text-[24px] font-light leading-none text-black lg:relative lg:top-auto lg:shrink-0">
+                    <span className="absolute right-0 top-4 font-sans text-[24px] font-light leading-none text-black xl:relative xl:top-auto xl:shrink-0">
                       {isExpanded ? "−" : "+"}
                     </span>
                   </button>

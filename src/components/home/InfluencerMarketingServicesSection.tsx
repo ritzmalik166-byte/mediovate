@@ -140,13 +140,13 @@ export default function InfluencerMarketingServicesSection() {
       id="influencer-marketing"
       className="scroll-mt-24 bg-white pt-4 pb-8 md:py-0"
     >
-      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
-        <h2 className="text-center font-sans text-[28px] font-medium leading-[36px] text-black md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-normal">
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10">
+        <h2 className="text-center font-sans text-[28px] font-medium leading-[36px] text-black md:text-[40px] md:leading-[48px] lg:text-[42px] xl:text-[50px] xl:leading-normal">
           Our Influencer Marketing Services
         </h2>
 
-        <div className="mt-8 flex flex-col gap-6 max-md:gap-6 md:mt-10 md:flex-row md:items-start md:gap-5 lg:mt-12 lg:justify-center lg:gap-0">
-          <div className="flex w-full shrink-0 flex-col md:w-[min(100%,280px)] lg:w-auto">
+        <div className="mt-8 flex flex-col gap-6 max-md:gap-6 md:mt-10 md:flex-row md:items-start md:gap-5 lg:mt-10 lg:gap-6 xl:mt-12 xl:justify-center xl:gap-0">
+          <div className="flex w-full shrink-0 flex-col md:w-[min(100%,280px)] lg:w-[min(100%,240px)] xl:w-auto">
             {services.map((service, index) => {
               const isActive = activeIndex === index;
 
@@ -156,21 +156,21 @@ export default function InfluencerMarketingServicesSection() {
                   type="button"
                   onClick={() => handleSelectService(index)}
                   aria-pressed={isActive}
-                  className="flex min-h-[72px] w-full cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:h-[92px] lg:w-[429px]"
+                  className="flex min-h-[72px] w-full cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:min-h-[72px] xl:h-[92px] xl:w-[429px]"
                 >
-                  <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[60px] md:text-[15px] lg:w-[72px] lg:text-[16px]">
+                  <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[60px] md:text-[15px] lg:w-[52px] lg:text-[14px] xl:w-[72px] xl:text-[16px]">
                     {service.id}
                   </span>
                   <span
                     className="h-full w-px shrink-0 bg-[#D8D2D2]"
                     aria-hidden="true"
                   />
-                  <span className="flex min-w-0 flex-1 items-center py-3 pl-3 pr-2 md:pl-3 lg:py-0 lg:pl-5 lg:pr-3">
-                    <span className="font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[13px] md:leading-[20px] lg:w-[225px] lg:text-[16px] lg:leading-[26px]">
+                  <span className="flex min-w-0 flex-1 items-center py-3 pl-3 pr-2 md:pl-3 lg:py-2 lg:pl-3 lg:pr-2 xl:py-0 xl:pl-5 xl:pr-3">
+                    <span className="font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[13px] md:leading-[20px] lg:text-[13px] lg:leading-[20px] xl:w-[225px] xl:text-[16px] xl:leading-[26px]">
                       {service.title}
                     </span>
                   </span>
-                  <span className="flex w-[40px] shrink-0 items-center justify-center pr-3 md:w-[44px] lg:w-[52px] lg:pr-4">
+                  <span className="flex w-[40px] shrink-0 items-center justify-center pr-3 md:w-[44px] lg:w-[36px] xl:w-[52px] xl:pr-4">
                     {isActive ? <ServiceArrowIcon /> : null}
                   </span>
                 </button>
@@ -180,33 +180,31 @@ export default function InfluencerMarketingServicesSection() {
 
           <div
             ref={previewPanelRef}
-            className="flex flex-col gap-5 max-md:w-full md:sticky md:top-20 md:min-w-0 md:flex-1 md:gap-4 lg:static lg:contents"
+            className="flex min-w-0 flex-1 flex-col gap-5 max-md:w-full md:sticky md:top-20 md:flex-row md:gap-4 lg:gap-5 xl:static xl:contents"
             aria-live="polite"
             aria-atomic="true"
           >
-            <div className="lg:contents">
-              <div className="relative h-[260px] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-md:mx-auto max-md:max-w-[560px] md:h-[220px] md:max-w-none md:rounded-[16px] lg:h-[547px] lg:w-[417px] lg:rounded-none">
-                <Image
-                  key={activeService.image}
-                  src={activeService.image}
-                  alt={activeService.title}
-                  fill
-                  className="object-cover transition-opacity duration-300"
-                  sizes="(max-width: 1024px) 50vw, 417px"
-                />
-              </div>
+            <div className="relative h-[260px] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-md:mx-auto max-md:max-w-[560px] md:h-[220px] md:max-w-none md:rounded-[16px] lg:h-[380px] lg:w-[min(100%,300px)] lg:rounded-[16px] xl:h-[547px] xl:w-[417px] xl:rounded-none">
+              <Image
+                key={activeService.image}
+                src={activeService.image}
+                alt={activeService.title}
+                fill
+                className="object-cover transition-opacity duration-300"
+                sizes="(max-width: 1280px) 40vw, 417px"
+              />
             </div>
 
-            <div className="flex w-full flex-col items-center py-0 text-center max-md:max-w-[560px] max-md:self-center md:items-stretch md:text-left lg:ml-10 lg:min-h-[547px] lg:max-w-none lg:py-8">
-              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[18px] md:leading-[26px] lg:text-[24px] lg:leading-[34px]">
+            <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-md:max-w-[560px] max-md:self-center md:items-stretch md:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
+              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]">
                 {activeService.title}
               </h3>
-              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-md:mx-auto max-md:text-center md:mt-3 md:max-w-none md:text-[14px] md:leading-[24px] lg:mt-6 lg:w-[382px] lg:text-[16px] lg:leading-[28px]">
+              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-md:mx-auto max-md:text-center md:mt-3 md:max-w-none md:text-[14px] md:leading-[24px] lg:mt-4 lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
                 {activeService.description}
               </p>
               <button
                 type="button"
-                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-md:mx-auto md:mt-5 md:justify-start lg:mt-10 lg:text-[16px]"
+                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-md:mx-auto md:mt-5 md:justify-start lg:mt-6 xl:mt-10 xl:text-[16px]"
               >
                 Launch Your Campaign
                 <ServiceArrowIcon />
@@ -215,7 +213,7 @@ export default function InfluencerMarketingServicesSection() {
           </div>
         </div>
       </div>
-      <div className="mt-4 mb-8 h-px w-full bg-[#FFE4C8] md:my-12 lg:my-[60px]" />
+      <div className="mt-4 mb-8 h-px w-full bg-[#FFE4C8] md:my-12 xl:my-[60px]" />
     </section>
   );
 }

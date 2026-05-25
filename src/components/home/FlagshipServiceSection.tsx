@@ -86,34 +86,30 @@ export default function FlagshipServiceSection() {
       id="flagship-service"
       className="scroll-mt-24 bg-white pt-4 pb-8 lg:py-0"
     >
-      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
-        <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[397px_407px_1fr] lg:items-start lg:gap-x-16 lg:gap-y-6">
-          <h2 className="text-center font-sans text-[28px] font-medium leading-normal text-black md:text-[36px] lg:text-left lg:text-[50px]">
-            Our Flagship Service
-          </h2>
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10">
+        <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-start lg:gap-x-6 xl:grid-cols-[397px_420px_1fr] xl:items-stretch xl:gap-x-16">
+          <div className="flex min-w-0 flex-col lg:col-start-1">
+            <h2 className="text-center font-sans text-[28px] font-medium leading-normal text-black md:text-[36px] lg:text-left lg:text-[44px] xl:text-[50px]">
+              Our Flagship Service
+            </h2>
 
-          <h3 className="w-full text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[20px] md:leading-[30px] lg:col-start-2 lg:row-start-1 lg:w-[344px] lg:text-left lg:text-[24px] lg:leading-[34px]">
-            Influencer Marketing That Builds Brands &amp; Drives Sales
-          </h3>
-
-          <div className="w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:text-[17px] md:leading-[28px] lg:col-start-1 lg:row-start-2 lg:h-[461px] lg:w-[407px] lg:text-left lg:text-[16px] lg:leading-[30px]">
-            <p>
-              Influence means a lot more than mere visibility. It&apos;s about
-              trust, culture, engagement, and driving real consumer action. We
-              are an{" "}
-              <strong className="font-bold">
-                Influencer Marketing Agency in India
-              </strong>
-              , &amp; help brands to become visible, stay relevant and lead
-              their category. We use ROI-driven influencer marketing campaigns
-              that reach audiences across{" "}
-              <strong className="font-bold">
-                Instagram, YouTube, LinkedIn
-              </strong>{" "}
-              and budding creator economy platforms.
-            </p>
-            <div className="mt-3 w-full lg:mt-0 lg:w-[418px]">
-              <p className="mt-4 lg:mt-4">
+            <div className="mt-5 w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:mt-6 md:text-left md:text-[17px] md:leading-[28px] lg:mt-8 lg:flex-1 lg:text-[15px] lg:leading-[28px] xl:text-[16px] xl:leading-[30px]">
+              <p>
+                Influence means a lot more than mere visibility. It&apos;s about
+                trust, culture, engagement, and driving real consumer action. We
+                are an{" "}
+                <strong className="font-bold">
+                  Influencer Marketing Agency in India
+                </strong>
+                , &amp; help brands to become visible, stay relevant and lead
+                their category. We use ROI-driven influencer marketing campaigns
+                that reach audiences across{" "}
+                <strong className="font-bold">
+                  Instagram, YouTube, LinkedIn
+                </strong>{" "}
+                and budding creator economy platforms.
+              </p>
+              <p className="mt-4">
                 From effective niche{" "}
                 <strong className="font-bold">nano influencer marketing</strong>{" "}
                 to top-notch{" "}
@@ -133,68 +129,83 @@ export default function FlagshipServiceSection() {
             </div>
           </div>
 
-          <div className="flex w-full flex-col rounded-[20px] bg-[#FFF5EB] px-5 py-6 text-left md:items-center md:text-center md:px-6 md:py-7 lg:col-start-2 lg:row-start-2 lg:h-[461px] lg:w-[420px] lg:items-stretch lg:px-8 lg:py-8 lg:text-left">
-            <p className="font-sans text-[18px] font-semibold leading-[28px] text-black md:text-[19px] lg:text-[20px]">
-              As a trusted:
-            </p>
+          <div className="flex min-w-0 flex-col lg:col-start-2">
+            <h3 className="w-full text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:text-left md:text-[20px] md:leading-[30px] lg:text-[20px] lg:leading-[30px] xl:text-[24px] xl:leading-[34px]">
+              Influencer Marketing That Builds Brands &amp; Drives Sales
+            </h3>
 
-            <div className="mt-4 flex w-full flex-col gap-3 md:mt-5 md:max-w-[520px] md:items-center md:gap-3.5 lg:mt-5 lg:h-[300px] lg:w-[354px] lg:max-w-none lg:items-stretch lg:gap-4">
-              {trustedAgencies.map((agency, index) => (
-                <p
-                  key={index}
-                  className="flex w-full items-start gap-3 md:w-fit md:max-w-full lg:w-full"
-                >
-                  <ListStarIcon />
-                  <span
-                    className={`text-left font-open-sans text-[15px] font-normal leading-[24px] text-black md:text-[16px] md:leading-[28px] lg:text-[18px] lg:leading-[32px] ${
-                      index === 1 ? "lg:whitespace-nowrap" : ""
-                    }`}
+            <div className="mt-5 flex w-full flex-1 flex-col rounded-[20px] bg-[#FFF5EB] px-5 py-6 text-left md:items-center md:px-6 md:py-7 md:text-center lg:mt-6 lg:items-stretch lg:px-6 lg:py-7 lg:text-left xl:px-8 xl:py-8">
+              <p className="w-full font-sans text-[18px] font-semibold leading-[28px] text-black md:text-[19px] xl:text-[20px]">
+                As a trusted:
+              </p>
+
+              <div className="mt-4 flex w-full flex-col gap-2 md:mt-5 md:max-w-[500px] md:items-center md:gap-2.5 lg:max-w-none lg:items-stretch lg:gap-2 xl:mt-4 xl:gap-2">
+                {trustedAgencies.map((agency, index) => (
+                  <p
+                    key={index}
+                    className="flex w-full items-start gap-3 md:w-fit md:max-w-full lg:w-full"
                   >
-                    {agency}
-                  </span>
-                </p>
-              ))}
-            </div>
+                    <ListStarIcon />
+                    <span
+                      className={`text-left font-open-sans text-[15px] font-normal leading-[24px] text-black md:text-[16px] md:leading-[26px] lg:text-[15px] lg:leading-[26px] xl:text-[18px] xl:leading-[32px] ${
+                        index === 1 ? "xl:whitespace-nowrap" : ""
+                      }`}
+                    >
+                      {agency}
+                    </span>
+                  </p>
+                ))}
+              </div>
 
-            <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black md:mx-auto md:max-w-[520px] md:text-center lg:mt-auto lg:w-[364px] lg:mx-0 lg:max-w-none lg:text-left">
-              We help brands create high-impact influencer campaigns that
-              actually convert.
-            </p>
+              <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black md:mx-auto md:max-w-[500px] md:text-center lg:mx-0 lg:max-w-none lg:text-left xl:mt-auto">
+                We help brands create high-impact influencer campaigns that
+                actually convert.
+              </p>
+            </div>
           </div>
 
-          <div className="flex w-full flex-col md:items-center md:text-center lg:col-start-3 lg:row-span-2 lg:row-start-1 lg:self-stretch lg:items-stretch lg:text-left">
-            <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[280px]">
+          <div className="flex w-full min-w-0 flex-col max-md:items-center max-md:text-center md:text-left lg:col-start-3 lg:items-stretch lg:text-left xl:self-stretch">
+            <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[220px] xl:h-[280px]">
               <Image
                 src="/assets/Home/hands_up_lady.png"
                 alt="Influencer creating content for a brand campaign"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 33vw"
+                sizes="(max-width: 1280px) 30vw, 33vw" 
               />
             </div>
 
-            <div className="mt-5 flex flex-1 flex-col md:mt-5 lg:mt-6">
-              <ul className="grid w-full grid-cols-2 gap-x-7 gap-y-7 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-x-4 md:gap-y-7 md:text-[14px] md:leading-[22px] lg:flex lg:flex-col lg:gap-7 lg:text-[16px] lg:leading-[24px]">
+            <div className="mt-5 flex min-h-0 flex-col md:mt-5 lg:mt-6 xl:min-h-0 xl:flex-1">
+              <ul className="flex w-full shrink-0 flex-col gap-2 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-2.5 md:text-[14px] md:leading-[22px] lg:gap-2.5 lg:text-[14px] lg:leading-[24px] xl:gap-7 xl:text-[16px] xl:leading-[28px]">
                 {influencerFeatures.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-7 lg:w-full lg:gap-3"
+                    className="flex items-start gap-2 lg:gap-2.5 xl:gap-3"
                   >
                     <span
-                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2.5"
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-mediovate-tan lg:mt-2 xl:mt-2.5"
                       aria-hidden="true"
                     />
-                    <span className="flex-1 text-left">{feature}</span>
+                    <span className="text-left">{feature}</span>
                   </li>
                 ))}
               </ul>
 
+              <div
+                className="hidden h-8 shrink-0 lg:block xl:hidden"
+                aria-hidden="true"
+              />
+              <div
+                className="hidden min-h-8 flex-1 xl:block"
+                aria-hidden="true"
+              />
+
               <button
                 type="button"
-                className="group mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[14px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-7 lg:mt-auto lg:h-[54px] lg:w-[379px] lg:text-[16px]"
+                className="group mt-6 flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[13px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:justify-start md:text-[14px] lg:mt-0 lg:h-[50px] lg:justify-start lg:px-3 lg:text-[13px] xl:h-[54px] xl:w-[379px] xl:px-8 xl:text-[16px]"
               >
                 Launch Your Influencer Campaign
-                <CampaignArrowIcon />
+                <CampaignArrowIcon className="shrink-0" />
               </button>
             </div>
           </div>
