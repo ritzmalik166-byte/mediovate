@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import MediovateLogo from "./MediovateLogo";
 
 const NAV_LINKS = [
   { label: "Home", sectionId: "hero" },
@@ -59,17 +60,7 @@ function CallUsArrowIcon({ className }: { className?: string }) {
 }
 
 function Logo() {
-  return (
-    <Image
-      src="/assets/Home/mediovate_logo.png"
-      alt="Mediovate"
-      width={190}
-      height={22}
-      className="object-contain max-lg:h-[30px] max-lg:w-auto max-lg:object-left lg:h-auto lg:w-auto"
-      style={{ width: "auto" }}
-      priority
-    />
-  );
+  return <MediovateLogo priority />;
 }
 
 function scrollToSection(sectionId: string) {

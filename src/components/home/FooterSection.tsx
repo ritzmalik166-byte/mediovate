@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import MediovateLogo from "./MediovateLogo";
 
 const influencerMarketingLinks = [
   "Influencer Identification",
@@ -120,14 +120,7 @@ export default function FooterSection() {
       <div className="section-container pt-5 md:pt-12 lg:pt-12 xl:pt-16">
         <div className="flex flex-col gap-10 md:gap-12 xl:grid xl:grid-cols-[221px_minmax(0,1fr)_164px] xl:items-start xl:gap-x-10 xl:gap-y-12 xl:text-left">
           <div className="flex w-full items-center justify-between max-lg:mx-auto max-lg:max-w-[400px] md:max-w-[480px] lg:max-w-none xl:col-start-1 xl:row-start-1 xl:justify-start">
-            <Image
-              src="/assets/Home/mediovate_logo.png"
-              alt="Mediovate"
-              width={221}
-              height={26}
-              className="block h-auto w-[160px] object-contain object-center md:w-[180px] lg:w-[180px] xl:w-[221px] xl:object-left"
-              style={{ height: "auto" }}
-            />
+            <MediovateLogo className="block" />
             <button
               type="button"
               onClick={scrollToTop}
