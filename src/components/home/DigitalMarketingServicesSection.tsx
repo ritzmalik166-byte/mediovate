@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import ConsultationTrigger from "@/components/consultation/ConsultationTrigger";
 import { getFooterServiceLinkFromHash } from "@/data/footerServiceLinks";
 import {
   DIGITAL_MARKETING_NAV_EVENT,
@@ -239,15 +240,12 @@ export default function DigitalMarketingServicesSection() {
             looking to expand.
           </p>
 
-          <button
-            type="button"
-            className="group flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white md:max-w-[400px] lg:max-w-[320px] lg:self-start xl:h-[74px] xl:w-[221px] xl:max-w-none"
-          >
+          <ConsultationTrigger className="group flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white md:max-w-[400px] lg:max-w-[320px] lg:self-start xl:h-[74px] xl:w-[221px] xl:max-w-none">
             <span className="font-sans text-[14px] font-semibold leading-[22px] transition-colors duration-300 lg:text-left xl:w-[148px] xl:text-[16px]">
               Drive More Qualified Leads
             </span>
             <LeadsArrowIcon className="transition-colors duration-300" />
-          </button>
+          </ConsultationTrigger>
         </div>
 
         <div className="mt-8 flex flex-col gap-5 md:mt-12 md:gap-6 lg:mt-10 lg:flex-row lg:items-stretch lg:gap-6 xl:mt-16 xl:gap-0">

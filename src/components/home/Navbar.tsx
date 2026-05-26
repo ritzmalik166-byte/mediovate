@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { useConsultationModal } from "@/components/providers/ConsultationModalProvider";
+import { useCallUsModal } from "@/components/providers/CallUsModalProvider";
 import MediovateLogo from "./MediovateLogo";
 
 const NAV_LINKS = [
@@ -78,8 +80,20 @@ function scrollToSection(sectionId: string) {
 export default function Navbar() {
   const [isLight, setIsLight] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openConsultationModal } = useConsultationModal();
+  const { openCallUsModal } = useCallUsModal();
 
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+
+  const handleConsultationClick = useCallback(() => {
+    closeMenu();
+    openConsultationModal();
+  }, [closeMenu, openConsultationModal]);
+
+  const handleCallUsClick = useCallback(() => {
+    closeMenu();
+    openCallUsModal();
+  }, [closeMenu, openCallUsModal]);
 
   const handleNavClick = useCallback(
     (sectionId: string) => {
@@ -163,6 +177,7 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-2 max-lg:gap-2 lg:gap-4">
             <button
               type="button"
+              onClick={handleConsultationClick}
               className="group hidden h-[40px] w-[250px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] lg:flex"
             >
               <span className="w-[182px] text-center text-[13px] font-semibold leading-5 transition-colors duration-300">
@@ -173,6 +188,7 @@ export default function Navbar() {
 
             <button
               type="button"
+              onClick={handleCallUsClick}
               className={`group hidden h-[40px] w-[165px] cursor-pointer items-center justify-center gap-2 rounded-[50px] border bg-transparent transition-colors duration-300 lg:flex ${
                 showSolidHeader
                   ? "border-[#A87C4F] text-[#A87C4F] hover:bg-[#A87C4F] hover:text-white"
@@ -267,6 +283,7 @@ export default function Navbar() {
               >
                 <button
                   type="button"
+                  onClick={handleConsultationClick}
                   className="group flex h-[44px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F]"
                 >
                   <span className="text-[13px] font-semibold leading-5">
@@ -277,6 +294,7 @@ export default function Navbar() {
 
                 <button
                   type="button"
+                  onClick={handleCallUsClick}
                   className="group flex h-[44px] w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white"
                 >
                   <span className="text-[13px] font-semibold leading-5">

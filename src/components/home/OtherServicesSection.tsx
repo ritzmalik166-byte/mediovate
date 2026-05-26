@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import ConsultationTrigger from "@/components/consultation/ConsultationTrigger";
 import { getFooterServiceLinkFromHash } from "@/data/footerServiceLinks";
 import {
   OTHER_SERVICE_NAV_EVENT,
@@ -236,15 +237,12 @@ export default function OtherServicesSection() {
               your brand&apos;s value, personality, and purpose with clarity and
               impact.
             </p>
-            <button
-              type="button"
-              className="group mx-auto mt-6 flex h-[48px] w-full max-w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[15px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-8 md:max-w-[400px] lg:mx-0 lg:mt-8 xl:mt-14 xl:h-[54px] xl:w-[296px] xl:max-w-none xl:text-[16px]"
-            >
+            <ConsultationTrigger className="group mx-auto mt-6 flex h-[48px] w-full max-w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] text-center font-sans text-[15px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:mt-8 md:max-w-[400px] lg:mx-0 lg:mt-8 xl:mt-14 xl:h-[54px] xl:w-[296px] xl:max-w-none xl:text-[16px]">
               <span className="transition-colors duration-300">
                 Get a Creative Proposal
               </span>
               <ProposalArrowIcon className="transition-colors duration-300" />
-            </button>
+            </ConsultationTrigger>
           </div>
 
           <div className="relative aspect-[367/519] w-full shrink-0 overflow-hidden rounded-[20px] max-lg:mx-auto max-lg:max-w-[560px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:max-w-none xl:aspect-auto xl:mx-10 xl:h-[519px] xl:w-[367px]">

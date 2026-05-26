@@ -1,3 +1,8 @@
+"use client";
+
+import { useConsultationModal } from "@/components/providers/ConsultationModalProvider";
+import CallUsTrigger from "@/components/consultation/CallUsTrigger";
+
 function ConsultationArrowIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -20,6 +25,8 @@ function ConsultationArrowIcon({ className }: { className?: string }) {
 }
 
 export default function CampaignCtaSection() {
+  const { openConsultationModal } = useConsultationModal();
+
   return (
     <section
       id="campaign-cta"
@@ -39,6 +46,7 @@ export default function CampaignCtaSection() {
         <div className="mt-6 flex w-full max-w-[360px] flex-col items-stretch gap-3 max-md:max-w-[360px] md:mt-7 md:max-w-none md:flex-row md:items-center md:justify-center md:gap-3 lg:mt-8 lg:gap-4">
           <button
             type="button"
+            onClick={openConsultationModal}
             className="group flex h-[48px] w-full max-md:w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:h-[44px] md:w-auto md:shrink-0 md:px-5 lg:h-[54px] lg:w-[310px] lg:px-4"
           >
             <span className="text-center font-sans text-[15px] font-semibold leading-[20px] md:text-[14px] lg:text-[16px]">
@@ -47,15 +55,12 @@ export default function CampaignCtaSection() {
             <ConsultationArrowIcon className="shrink-0 transition-colors duration-300" />
           </button>
 
-          <button
-            type="button"
-            className="group flex h-[48px] w-full max-md:w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white md:h-[44px] md:w-auto md:shrink-0 md:px-5 lg:h-[54px] lg:w-[188px] lg:px-4"
-          >
+          <CallUsTrigger className="group flex h-[48px] w-full max-md:w-full cursor-pointer items-center justify-center gap-2 rounded-[50px] border border-[#A87C4F] bg-white px-4 text-[#A87C4F] transition-colors duration-300 hover:bg-[#A87C4F] hover:text-white md:h-[44px] md:w-auto md:shrink-0 md:px-5 lg:h-[54px] lg:w-[188px] lg:px-4">
             <span className="text-center font-sans text-[15px] font-semibold leading-[20px] md:text-[14px] lg:text-[16px]">
               Call Us Now
             </span>
             <ConsultationArrowIcon className="shrink-0 transition-colors duration-300" />
-          </button>
+          </CallUsTrigger>
         </div>
       </div>
     </section>

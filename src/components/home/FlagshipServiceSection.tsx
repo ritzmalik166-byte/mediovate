@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ConsultationTrigger from "@/components/consultation/ConsultationTrigger";
 
 const influencerFeatures = [
   "Influencer Campaign Management",
@@ -197,13 +198,12 @@ export default function FlagshipServiceSection() {
                 aria-hidden="true"
               />
 
-              <button
-                type="button"
+              <ConsultationTrigger
                 className="group mt-6 flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[13px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:text-[14px] lg:mt-0 lg:h-[50px] lg:justify-start lg:px-3 lg:text-[13px] xl:h-[54px] xl:w-[379px] xl:px-8 xl:text-[16px]"
               >
                 Launch Your Influencer Campaign
                 <CampaignArrowIcon className="shrink-0" />
-              </button>
+              </ConsultationTrigger>
             </div>
           </div>
           </div>

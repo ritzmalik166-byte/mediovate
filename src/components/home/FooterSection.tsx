@@ -4,6 +4,7 @@ import MediovateLogo from "./MediovateLogo";
 import { companyLinks } from "@/data/companyLinks";
 import { footerServiceLinks } from "@/data/footerServiceLinks";
 import { influencerServiceLinks } from "@/data/influencerServiceLinks";
+import { useConsultationModal } from "@/components/providers/ConsultationModalProvider";
 import { scrollToCompanySection } from "@/lib/companyNavigation";
 import { scrollToInfluencerService } from "@/lib/influencerNavigation";
 import { scrollToFooterService } from "@/lib/serviceNavigation";
@@ -120,6 +121,8 @@ function scrollToTop() {
 }
 
 export default function FooterSection() {
+  const { openConsultationModal } = useConsultationModal();
+
   return (
     <footer className="bg-[#FFF5EB]">
       <div className="section-container pt-5 md:pt-12 lg:pt-12 xl:pt-16">
@@ -195,6 +198,7 @@ export default function FooterSection() {
           <div className="flex w-full justify-center md:justify-start lg:justify-start xl:col-start-3 xl:row-start-2 xl:justify-start">
             <button
               type="button"
+              onClick={openConsultationModal}
               className="group flex h-[130px] w-[130px] cursor-pointer flex-col items-center justify-center rounded-full border border-[#F3BB82] bg-transparent px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[140px] md:w-[140px] xl:h-[164px] xl:w-[164px] xl:px-4"
             >
               <ConsultationCircleArrowIcon />

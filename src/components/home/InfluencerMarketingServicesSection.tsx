@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import ConsultationTrigger from "@/components/consultation/ConsultationTrigger";
 import {
   getInfluencerServiceIndexFromHash,
   influencerServiceLinks,
@@ -305,13 +306,10 @@ export default function InfluencerMarketingServicesSection() {
               <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-lg:mx-auto max-lg:text-center md:max-w-[640px] lg:mt-3 lg:max-w-none lg:text-left lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
                 {activeService.description}
               </p>
-              <button
-                type="button"
-                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-lg:mx-auto lg:mt-5 lg:justify-start xl:mt-10 xl:text-[16px]"
-              >
+              <ConsultationTrigger className="mt-6 flex cursor-pointer items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black transition-colors duration-200 hover:text-[#A87C4F] max-lg:mx-auto lg:mt-5 lg:justify-start xl:mt-10 xl:text-[16px]">
                 Launch Your Campaign
                 <ServiceArrowIcon />
-              </button>
+              </ConsultationTrigger>
             </div>
           </div>
         </div>

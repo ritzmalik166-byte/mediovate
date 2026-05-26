@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ConsultationTrigger from "@/components/consultation/ConsultationTrigger";
 
 const stats = [
   {
@@ -52,8 +53,7 @@ function StatCard({
 
 function CampaignCta() {
   return (
-    <button
-      type="button"
+    <ConsultationTrigger
       className="group flex h-[140px] w-[140px] shrink-0 cursor-pointer flex-col items-center justify-center rounded-full border border-[#FFE4C8] bg-white px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[152px] md:w-[152px] lg:h-[136px] lg:w-[136px] xl:h-[164px] xl:w-[164px] xl:px-4"
     >
       <div
@@ -86,7 +86,7 @@ function CampaignCta() {
         <br />
         Campaign
       </span>
-    </button>
+    </ConsultationTrigger>
   );
 }
 
