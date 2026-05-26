@@ -20,7 +20,7 @@ const slides: {
           yields sustained organic traffic and quality leads every month.
         </>
       ),
-      image: "/assets/Home/seo_image.png",
+      image: "/assets/Home/website other parts-15.jpg",
     },
     {
       title: "PPC & Google Ads Management",
@@ -35,7 +35,7 @@ const slides: {
           Cost Per Acquisition.
         </>
       ),
-      image: "/assets/Home/seo_image.png",
+      image: "/assets/Home/website other parts-16.jpg",
     },
     {
       title: "Social Media Marketing (SMM)",
@@ -48,7 +48,7 @@ const slides: {
           <strong className="font-bold">YouTube.</strong>
         </>
       ),
-      image: "/assets/Home/seo_image.png",
+      image: "/assets/Home/website other parts-17.jpg",
     },
 
     {
@@ -67,7 +67,7 @@ const slides: {
           throughout the sales funnel.
         </>
       ),
-      image: "/assets/Home/seo_image.png",
+      image: "/assets/Home/website other parts-18.jpg",
     },
     {
       title: "Website Design & Development",
@@ -81,7 +81,7 @@ const slides: {
           </strong>
         </>
       ),
-      image: "/assets/Home/seo_image.png",
+      image: "/assets/Home/website other parts-19.jpg",
     },
   ];
 

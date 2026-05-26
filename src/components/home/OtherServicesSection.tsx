@@ -1,16 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type ReactNode } from "react";
+import { useCallback, useState, type ReactNode } from "react";
 
 const creativeServices: {
   id: string;
   title: string;
+  image: string;
+  imageAlt: string;
   description: ReactNode;
 }[] = [
   {
     id: "01",
     title: "Brand Identity & Logo Design",
+    image: "/assets/Home/website other parts-10.jpg",
+    imageAlt: "Brand identity and logo design showcase",
     description: (
       <>
         Complete brand identity design
@@ -26,6 +30,8 @@ const creativeServices: {
   {
     id: "02",
     title: "Social Media Creative Design",
+    image: "/assets/Home/website other parts-11.jpg",
+    imageAlt: "Social media creative design workspace",
     description: (
       <>
         Scroll-stopping social media creatives such as{" "}
@@ -40,6 +46,8 @@ const creativeServices: {
   {
     id: "03",
     title: "Ad Creatives & Campaign Visuals",
+    image: "/assets/Home/website other parts-12.jpg",
+    imageAlt: "Digital ad creatives and campaign visuals",
     description: (
       <>
         High-converting digital ad creatives for{" "}
@@ -55,6 +63,8 @@ const creativeServices: {
   {
     id: "04",
     title: "Packaging & Brand Collateral Design",
+    image: "/assets/Home/website other parts-13.jpg",
+    imageAlt: "Packaging and brand collateral design",
     description: (
       <>
         Product packaging design, brochures, pitch decks,{" "}
@@ -68,6 +78,8 @@ const creativeServices: {
   {
     id: "05",
     title: "Video Production & Motion Graphics",
+    image: "/assets/Home/website other parts-14.jpg",
+    imageAlt: "Video production and motion graphics studio",
     description: (
       <>
         <strong className="font-bold">
@@ -105,6 +117,31 @@ function ProposalArrowIcon({ className }: { className?: string }) {
 
 export default function OtherServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const [outgoingImageIndex, setOutgoingImageIndex] = useState<number | null>(
+    null,
+  );
+  const [isImageTransitioning, setIsImageTransitioning] = useState(false);
+
+  const handleAccordionClick = useCallback(
+    (index: number) => {
+      if (isImageTransitioning) return;
+
+      const nextIndex = expandedIndex === index ? 0 : index;
+      if (nextIndex === expandedIndex) return;
+
+      setOutgoingImageIndex(expandedIndex);
+      setIsImageTransitioning(true);
+      setExpandedIndex(nextIndex);
+
+      window.setTimeout(() => {
+        setOutgoingImageIndex(null);
+        setIsImageTransitioning(false);
+      }, 500);
+    },
+    [expandedIndex, isImageTransitioning],
+  );
+
+  const activeService = creativeServices[expandedIndex];
 
   return (
     <section
@@ -159,12 +196,26 @@ export default function OtherServicesSection() {
 
           <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[300px] md:max-w-[560px] md:self-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:h-full lg:min-h-[320px] lg:w-full lg:max-w-none xl:mx-10 xl:h-[519px] xl:w-[367px]">
             <Image
-              src="/assets/Home/logo design 1.png"
-              alt="Creative brand identity design showcase"
+              src={activeService.image}
+              alt={activeService.imageAlt}
               fill
-              className="object-cover"
+              className={`object-cover ${
+                isImageTransitioning
+                  ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
+                  : ""
+              }`}
               sizes="(max-width: 1024px) 560px, 367px"
             />
+            {outgoingImageIndex !== null ? (
+              <Image
+                src={creativeServices[outgoingImageIndex].image}
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 560px, 367px"
+                className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
+                aria-hidden="true"
+              />
+            ) : null}
           </div>
 
           <div className="w-full shrink-0 md:max-w-[640px] md:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]">
@@ -178,9 +229,7 @@ export default function OtherServicesSection() {
                 >
                   <button
                     type="button"
-                    onClick={() =>
-                      setExpandedIndex(isExpanded ? 0 : index)
-                    }
+                    onClick={() => handleAccordionClick(index)}
                     aria-expanded={isExpanded}
                     className="relative flex w-full cursor-pointer flex-col py-4 pr-10 text-left md:py-5 xl:flex-row xl:items-start xl:justify-between xl:gap-6 xl:py-6 xl:pr-0"
                   >

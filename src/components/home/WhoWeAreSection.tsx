@@ -136,7 +136,7 @@ export default function WhoWeAreSection() {
             <div className="mt-8 flex flex-col items-stretch gap-6 pt-0 max-lg:items-center md:gap-7 lg:mt-6 lg:flex-row lg:items-center lg:gap-5 lg:pt-0 xl:mt-auto xl:gap-8 xl:pt-14">
               <div className="relative h-[220px] w-full min-w-0 flex-1 overflow-hidden rounded-[20px] bg-[#f5f0ea] md:h-[260px] lg:h-[220px] xl:h-[312px]">
                 <Image
-                  src="/assets/Home/photo_lady.png"
+                  src="/assets/Home/website other parts-01.jpg"
                   alt="Influencer filming content for a brand campaign"
                   fill
                   className="object-cover"

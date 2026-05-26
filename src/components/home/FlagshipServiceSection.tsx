@@ -168,7 +168,7 @@ export default function FlagshipServiceSection() {
           <div className="flex w-full min-w-0 flex-col max-md:items-center max-md:text-center md:text-left lg:items-stretch lg:text-left">
             <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[220px] xl:h-[280px]">
               <Image
-                src="/assets/Home/hands_up_lady.png"
+                src="/assets/Home/website other parts-02.jpg"
                 alt="Influencer creating content for a brand campaign"
                 fill
                 className="object-cover"

@@ -9,29 +9,29 @@ const CARD_PAIR_STEP = CARD_PAIR_WIDTH + CARD_PAIR_GAP;
 
 const featureCards = [
   {
-    image: "/assets/Home/connect.png",
-    imageAlt: "Verified influencer network illustration",
+    image: "/assets/Home/website other parts-20.jpg",
+    imageAlt: "5000+ verified influencer network milestone",
     title: "5000+ Verified Influencer Network",
     description:
       "Our curated network spans nano, micro, macro, and celebrity influencers across every niche beauty, tech, fitness, finance, food, travel, and more each vetted for authentic engagement.",
   },
   {
-    image: "/assets/Home/stats.png",
+    image: "/assets/Home/website other parts-21.jpg",
     imageAlt: "ROI-driven campaign analytics dashboard",
     title: "ROI-Driven, Data-Backed Campaigns",
     description:
       "Every campaign decision is backed by deep audience data, competitor analysis, and performance benchmarks. We track impressions, engagement, conversions, and earned media value , not just post counts.",
   },
   {
-    image: "/assets/Home/connect.png",
-    imageAlt: "Influencer network across niches",
+    image: "/assets/Home/website other parts-22.jpg",
+    imageAlt: "360 degree brand growth strategy",
     title: "360° Brand Growth Approach",
     description:
       "Influencer marketing + creative branding + digital marketing , a unified strategy that builds your brand from awareness to conversion, ensuring consistent messaging across every platform and touchpoint.",
   },
   {
-    image: "/assets/Home/stats.png",
-    imageAlt: "Campaign performance reporting",
+    image: "/assets/Home/website other parts-23.jpg",
+    imageAlt: "Transparent campaign performance reporting",
     title: "Transparent Reporting & Dedicated Teams",
     description:
       "Real-time campaign dashboards, monthly performance reports, zero hidden costs and a dedicated account team who knows your brand inside out. You're always in the loop, always in control.",

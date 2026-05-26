@@ -201,7 +201,7 @@ export default function PlatformReachSection() {
 
           <div className="relative z-10 order-2 mx-auto aspect-square w-full max-w-[min(100%,300px)] shrink-0 overflow-hidden rounded-full md:max-w-[min(100%,360px)] lg:order-none lg:-mx-3 lg:aspect-auto lg:h-[260px] lg:w-[260px] lg:max-w-none xl:-mx-16 xl:h-[472px] xl:w-[472px]">
             <Image
-              src="https://otherassets.blob.core.windows.net/mediovate/platform&Reach.png"
+              src="/assets/Home/website other parts-03.jpg"
               alt="Influencer reviewing content on her phone"
               fill
               priority

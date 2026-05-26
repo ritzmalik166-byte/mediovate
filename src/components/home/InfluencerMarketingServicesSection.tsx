@@ -14,7 +14,7 @@ const services: {
     title: "Influencer Identification and Vetting",
     description:
       "We identify and vet influencers that are perfectly suited to your brand, by analyzing their audience demographics, engagement rate, niche relevance and authenticity to ensure that all creators can reach and influence your desired target audience.",
-    image: "/assets/Home/game_lady.png",
+    image: "/assets/Home/website other parts-04.jpg",
   },
   {
     id: "02",
@@ -29,7 +29,7 @@ const services: {
         marketing expenditure.
       </>
     ),
-    image: "/assets/Home/photo_lady.png",
+    image: "/assets/Home/website other parts-05.jpg",
   },
   {
     id: "03",
@@ -46,7 +46,7 @@ const services: {
         on message.
       </>
     ),
-    image: "/assets/Home/hands_up_lady.png",
+    image: "/assets/Home/website other parts-06.jpg",
   },
   {
     id: "04",
@@ -62,7 +62,7 @@ const services: {
         commercial impact.
       </>
     ),
-    image: "/assets/Home/campaign-creator.png",
+    image: "/assets/Home/website other parts-07.jpg",
   },
   {
     id: "05",
@@ -77,7 +77,7 @@ const services: {
         that create consistent brand recall and deep audience loyalty over time.
       </>
     ),
-    image: "/assets/Home/lady.png",
+    image: "/assets/Home/website other parts-08.jpg",
   },
   {
     id: "06",
@@ -93,7 +93,7 @@ const services: {
         audiences with authentic, culturally relevant storytelling.
       </>
     ),
-    image: "/assets/Home/game_lady.png",
+    image: "/assets/Home/website other parts-09.jpg",
   },
 ];
 
