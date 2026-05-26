@@ -84,7 +84,7 @@ function CampaignCta() {
       <span className="mt-2 w-full max-w-[120px] text-center font-sans text-[13px] font-semibold uppercase leading-[18px] transition-colors duration-300 md:max-w-[140px] md:text-[14px] md:leading-[19px] xl:max-w-[153px] xl:text-[16px] xl:leading-[20px]">
         Start Your
         <br />
-        Campaign Explore Services
+        Campaign
       </span>
     </button>
   );
@@ -94,9 +94,9 @@ export default function WhoWeAreSection() {
   return (
     <section
       id="who-we-are"
-      className="scroll-mt-24 bg-white pt-4 pb-8 md:py-10 lg:py-10 xl:py-11"
+      className="scroll-mt-24 bg-white pt-4 pb-8 md:py-10 lg:py-10 xl:py-11 "
     >
-      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10">
+      <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10 xl:py-12">
         <div className="flex flex-col items-stretch gap-8 max-lg:gap-8 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-6 xl:flex xl:flex-row xl:gap-x-0">
           <div className="w-full max-lg:order-1 xl:w-auto">
             <h2 className="w-full text-[36px] font-medium leading-[44px] text-black max-lg:text-center md:text-[48px] md:leading-[56px] lg:text-left lg:text-[52px] lg:leading-[68px] xl:w-[702px] xl:text-[76px] xl:leading-[102px]">

@@ -87,13 +87,13 @@ export default function FlagshipServiceSection() {
       className="scroll-mt-24 bg-white pt-4 pb-8 lg:py-0"
     >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10">
-        <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-start lg:gap-x-6 xl:grid-cols-[397px_420px_1fr] xl:items-stretch xl:gap-x-16">
-          <div className="flex min-w-0 flex-col lg:col-start-1">
+        <div className="flex flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:items-start lg:gap-x-6 xl:grid-cols-[397px_1fr] xl:gap-x-16">
+          <div className="flex min-w-0 flex-col">
             <h2 className="text-center font-sans text-[28px] font-medium leading-normal text-black md:text-[36px] lg:text-left lg:text-[44px] xl:text-[50px]">
               Our Flagship Service
             </h2>
 
-            <div className="mt-5 w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:mt-6 md:text-left md:text-[17px] md:leading-[28px] lg:mt-8 lg:flex-1 lg:text-[15px] lg:leading-[28px] xl:text-[16px] xl:leading-[30px]">
+            <div className="mt-5 w-full text-center font-open-sans text-[16px] font-normal leading-[26px] text-black md:mt-6 md:text-left md:text-[17px] md:leading-[28px] lg:mt-8 lg:text-[15px] lg:leading-[28px] xl:text-[16px] xl:leading-[30px]">
               <p>
                 Influence means a lot more than mere visibility. It&apos;s about
                 trust, culture, engagement, and driving real consumer action. We
@@ -129,7 +129,8 @@ export default function FlagshipServiceSection() {
             </div>
           </div>
 
-          <div className="flex min-w-0 flex-col lg:col-start-2">
+          <div className="flex min-w-0 flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-stretch lg:gap-x-6 xl:grid-cols-[420px_1fr] xl:gap-x-16">
+          <div className="flex min-w-0 flex-col">
             <h3 className="w-full text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:text-left md:text-[20px] md:leading-[30px] lg:text-[20px] lg:leading-[30px] xl:text-[24px] xl:leading-[34px]">
               Influencer Marketing That Builds Brands &amp; Drives Sales
             </h3>
@@ -157,14 +158,14 @@ export default function FlagshipServiceSection() {
                 ))}
               </div>
 
-              <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black md:mx-auto md:max-w-[500px] md:text-center lg:mx-0 lg:max-w-none lg:text-left xl:mt-auto">
+              <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black md:mx-auto md:max-w-[500px] md:text-center lg:mx-0 lg:mt-auto lg:max-w-none lg:text-left">
                 We help brands create high-impact influencer campaigns that
                 actually convert.
               </p>
             </div>
           </div>
 
-          <div className="flex w-full min-w-0 flex-col max-md:items-center max-md:text-center md:text-left lg:col-start-3 lg:items-stretch lg:text-left xl:self-stretch">
+          <div className="flex w-full min-w-0 flex-col max-md:items-center max-md:text-center md:text-left lg:items-stretch lg:text-left">
             <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[220px] xl:h-[280px]">
               <Image
                 src="/assets/Home/hands_up_lady.png"
@@ -175,7 +176,7 @@ export default function FlagshipServiceSection() {
               />
             </div>
 
-            <div className="mt-5 flex min-h-0 flex-col md:mt-5 lg:mt-6 xl:min-h-0 xl:flex-1">
+            <div className="mt-5 flex min-h-0 flex-col md:mt-5 lg:mt-6 lg:flex-1">
               <ul className="flex w-full shrink-0 flex-col gap-2 text-left font-open-sans text-[13px] font-normal leading-[20px] text-black md:gap-2.5 md:text-[14px] md:leading-[22px] lg:gap-2.5 lg:text-[14px] lg:leading-[24px] xl:gap-7 xl:text-[16px] xl:leading-[28px]">
                 {influencerFeatures.map((feature) => (
                   <li
@@ -192,11 +193,7 @@ export default function FlagshipServiceSection() {
               </ul>
 
               <div
-                className="hidden h-8 shrink-0 lg:block xl:hidden"
-                aria-hidden="true"
-              />
-              <div
-                className="hidden min-h-8 flex-1 xl:block"
+                className="hidden min-h-6 flex-1 lg:block"
                 aria-hidden="true"
               />
 
@@ -208,6 +205,7 @@ export default function FlagshipServiceSection() {
                 <CampaignArrowIcon className="shrink-0" />
               </button>
             </div>
+          </div>
           </div>
         </div>
       </div>
