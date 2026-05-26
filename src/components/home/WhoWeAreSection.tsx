@@ -140,7 +140,7 @@ export default function WhoWeAreSection() {
             <div className="mt-8 flex max-lg:order-2 flex-col items-stretch gap-6 pt-0 max-lg:items-center md:gap-7 lg:mt-6 lg:flex-row lg:items-center lg:gap-5 lg:pt-0 xl:mt-auto xl:gap-8 xl:pt-14">
               <div className="relative aspect-[1667/1321] w-full min-w-0 overflow-hidden rounded-[20px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[560px] max-lg:flex-none lg:aspect-auto lg:h-[220px] lg:flex-1 xl:h-[312px]">
                 <Image
-                  src="/assets/Home/website other parts-01.jpg"
+                  src="/assets/Home/website other parts-01 (1).jpg"
                   alt="Influencer filming content for a brand campaign"
                   fill
                   className="object-cover"
