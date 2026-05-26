@@ -23,10 +23,10 @@ const servicesLinks = [
 const companyLinks = ["About Mediovate", "Our Process", "Industries"];
 
 const columnHeadingClassName =
-  "font-open-sans text-[16px] font-bold uppercase leading-[28px] text-[#050102] max-lg:text-center lg:text-left";
+  "font-open-sans text-[16px] font-bold uppercase leading-[28px] text-[#050102] max-md:text-center md:text-left";
 
 const listItemClassName =
-  "font-open-sans text-[15px] font-normal leading-[35px] text-[#050102] max-lg:text-center max-lg:leading-[28px] lg:text-left lg:leading-[32px] xl:leading-[35px]";
+  "font-open-sans text-[15px] font-normal leading-[35px] text-[#050102] max-md:text-center max-md:leading-[28px] md:text-left md:leading-[32px] xl:leading-[35px]";
 
 function BackToTopIcon() {
   return (
@@ -85,9 +85,9 @@ function FooterColumn({
   className?: string;
 }) {
   return (
-    <div className={`max-lg:flex max-lg:flex-col max-lg:items-center ${className ?? ""}`}>
+    <div className={`max-md:flex max-md:flex-col max-md:items-center md:block ${className ?? ""}`}>
       <h3 className={columnHeadingClassName}>{title}</h3>
-      <div className="mt-4 max-lg:w-full">{children}</div>
+      <div className="mt-4 max-md:w-full md:mt-3">{children}</div>
     </div>
   );
 }
@@ -118,8 +118,8 @@ export default function FooterSection() {
   return (
     <footer className="bg-[#FFF5EB]">
       <div className="section-container pt-5 md:pt-12 lg:pt-12 xl:pt-16">
-        <div className="flex flex-col gap-10 md:gap-12 xl:grid xl:grid-cols-[221px_minmax(0,1fr)_164px] xl:items-start xl:gap-x-10 xl:gap-y-12 xl:text-left">
-          <div className="flex w-full items-center justify-between max-lg:mx-auto max-lg:max-w-[400px] md:max-w-[480px] lg:max-w-none xl:col-start-1 xl:row-start-1 xl:justify-start">
+        <div className="flex flex-col gap-10 md:gap-10 lg:gap-12 xl:grid xl:grid-cols-[221px_minmax(0,1fr)_164px] xl:items-start xl:gap-x-10 xl:gap-y-12 xl:text-left">
+          <div className="flex w-full items-center justify-between max-md:mx-auto max-md:max-w-[400px] md:max-w-none xl:col-start-1 xl:row-start-1 xl:justify-start">
             <MediovateLogo className="block" />
             <button
               type="button"
@@ -131,8 +131,8 @@ export default function FooterSection() {
             </button>
           </div>
 
-          <div className="flex justify-center max-lg:text-center lg:justify-start lg:text-left xl:col-start-2 xl:row-start-1 xl:justify-start">
-            <p className="w-full max-w-[340px] font-open-sans text-[18px] font-normal leading-[28px] text-[#050102] md:max-w-[520px] md:text-[20px] md:leading-[34px] lg:max-w-none xl:h-[103px] xl:w-[770px] xl:text-[24px] xl:leading-[39px]">
+          <div className="flex justify-center max-md:text-center md:justify-start md:text-left xl:col-start-2 xl:row-start-1 xl:justify-start">
+            <p className="w-full max-w-[340px] font-open-sans text-[18px] font-normal leading-[28px] text-[#050102] md:max-w-none md:text-[19px] md:leading-[32px] lg:text-[20px] lg:leading-[34px] xl:h-[103px] xl:w-[770px] xl:text-[24px] xl:leading-[39px]">
               Mediovate is the best influencer marketing agency in India,
               delivering ROI-driven influencer campaigns, creative branding, and
               full-service digital marketing solutions that grow brands at scale.
@@ -150,10 +150,10 @@ export default function FooterSection() {
             </button>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-8 max-lg:mx-auto max-lg:max-w-[400px] max-lg:text-center sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8 lg:text-left xl:contents">
+          <div className="grid w-full grid-cols-1 gap-8 max-md:mx-auto max-md:max-w-[400px] max-md:text-center sm:grid-cols-2 md:mx-0 md:max-w-none md:gap-x-8 md:gap-y-10 md:text-left lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8 xl:contents">
             <div className="w-full xl:col-start-1 xl:row-start-2">
               <FooterColumn title="Get in Touch">
-                <div className="font-open-sans text-[15px] font-normal leading-[32px] text-[#050102] max-lg:text-center md:text-[16px] md:leading-[36px] lg:text-left lg:leading-[34px] xl:leading-[38px]">
+                <div className="font-open-sans text-[15px] font-normal leading-[32px] text-[#050102] max-md:text-center md:text-left md:text-[16px] md:leading-[36px] lg:leading-[34px] xl:leading-[38px]">
                   <p>hello@mediovateagency.com</p>
                   <p>+91 12345 67890</p>
                 </div>
@@ -184,7 +184,7 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <div className="flex w-full justify-center lg:justify-start xl:col-start-3 xl:row-start-2 xl:justify-start">
+          <div className="flex w-full justify-center md:justify-start lg:justify-start xl:col-start-3 xl:row-start-2 xl:justify-start">
             <button
               type="button"
               className="group flex h-[130px] w-[130px] cursor-pointer flex-col items-center justify-center rounded-full border border-[#F3BB82] bg-transparent px-3 text-black transition-colors duration-300 hover:border-[#A87C4F] hover:bg-[#A87C4F] hover:text-white md:h-[140px] md:w-[140px] xl:h-[164px] xl:w-[164px] xl:px-4"
@@ -198,7 +198,7 @@ export default function FooterSection() {
         </div>
 
         <div className="mt-10 border-t border-[#CDCDCD] py-5 md:mt-12 md:py-6 lg:mt-12 xl:mt-16">
-          <p className="text-center font-open-sans text-[13px] font-normal leading-[22px] text-[#050102] lg:text-left lg:text-[14px] lg:leading-[27px]">
+          <p className="text-center font-open-sans text-[13px] font-normal leading-[22px] text-[#050102] md:text-left md:text-[14px] md:leading-[27px]">
             © 2026 Mediovate Digital Marketing Agency. All rights reserved.
           </p>
         </div>

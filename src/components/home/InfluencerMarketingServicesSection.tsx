@@ -125,7 +125,7 @@ export default function InfluencerMarketingServicesSection() {
   const handleSelectService = (index: number) => {
     setActiveIndex(index);
 
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches) {
       window.requestAnimationFrame(() => {
         previewPanelRef.current?.scrollIntoView({
           behavior: "smooth",
@@ -145,8 +145,8 @@ export default function InfluencerMarketingServicesSection() {
           Our Influencer Marketing Services
         </h2>
 
-        <div className="mt-8 flex flex-col gap-6 max-md:gap-6 md:mt-10 md:flex-row md:items-start md:gap-5 lg:mt-10 lg:gap-6 xl:mt-12 xl:justify-center xl:gap-0">
-          <div className="flex w-full shrink-0 flex-col md:w-[min(100%,280px)] lg:w-[min(100%,240px)] xl:w-auto">
+        <div className="mt-8 flex flex-col gap-6 md:mt-10 lg:mt-10 lg:flex-row lg:items-start lg:gap-6 xl:mt-12 xl:justify-center xl:gap-0">
+          <div className="flex w-full shrink-0 flex-col lg:w-[min(100%,240px)] xl:w-auto">
             {services.map((service, index) => {
               const isActive = activeIndex === index;
 
@@ -158,15 +158,15 @@ export default function InfluencerMarketingServicesSection() {
                   aria-pressed={isActive}
                   className="flex min-h-[72px] w-full cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:min-h-[72px] xl:h-[92px] xl:w-[429px]"
                 >
-                  <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[60px] md:text-[15px] lg:w-[52px] lg:text-[14px] xl:w-[72px] xl:text-[16px]">
+                  <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[64px] md:text-[15px] lg:w-[52px] lg:text-[14px] xl:w-[72px] xl:text-[16px]">
                     {service.id}
                   </span>
                   <span
                     className="h-full w-px shrink-0 bg-[#D8D2D2]"
                     aria-hidden="true"
                   />
-                  <span className="flex min-w-0 flex-1 items-center py-3 pl-3 pr-2 md:pl-3 lg:py-2 lg:pl-3 lg:pr-2 xl:py-0 xl:pl-5 xl:pr-3">
-                    <span className="font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[13px] md:leading-[20px] lg:text-[13px] lg:leading-[20px] xl:w-[225px] xl:text-[16px] xl:leading-[26px]">
+                  <span className="flex min-w-0 flex-1 items-center py-3 pl-3 pr-2 md:py-3 md:pl-4 lg:py-2 lg:pl-3 lg:pr-2 xl:py-0 xl:pl-5 xl:pr-3">
+                    <span className="font-sans text-[14px] font-semibold leading-[22px] text-black md:text-[15px] md:leading-[22px] lg:text-[13px] lg:leading-[20px] xl:w-[225px] xl:text-[16px] xl:leading-[26px]">
                       {service.title}
                     </span>
                   </span>
@@ -180,26 +180,26 @@ export default function InfluencerMarketingServicesSection() {
 
           <div
             ref={previewPanelRef}
-            className="flex min-w-0 flex-1 flex-col gap-5 max-md:w-full md:sticky md:top-20 md:gap-4 lg:flex-row lg:gap-5 xl:static xl:contents"
+            className="flex min-w-0 flex-1 flex-col gap-5 max-lg:w-full lg:sticky lg:top-20 lg:flex-row lg:gap-5 xl:static xl:contents"
             aria-live="polite"
             aria-atomic="true"
           >
-            <div className="relative aspect-[417/547] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[560px] md:rounded-[16px] lg:mx-0 lg:w-[min(100%,300px)] lg:max-w-none lg:rounded-[16px] xl:aspect-auto xl:h-[547px] xl:w-[417px] xl:rounded-none">
+            <div className="relative aspect-[417/547] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[640px] md:rounded-[16px] lg:mx-0 lg:w-[min(100%,300px)] lg:max-w-none lg:rounded-[16px] xl:aspect-auto xl:h-[547px] xl:w-[417px] xl:rounded-none">
               <Image
                 key={activeService.image}
                 src={activeService.image}
                 alt={activeService.title}
                 fill
                 className="object-cover transition-opacity duration-300"
-                sizes="(max-width: 1024px) 560px, 300px, 417px"
+                sizes="(max-width: 1024px) 640px, 300px, 417px"
               />
             </div>
 
-            <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-lg:max-w-[560px] max-lg:self-center lg:items-stretch lg:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
-              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]">
+            <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-lg:max-w-[640px] max-lg:self-center lg:items-stretch lg:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
+              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[20px] md:leading-[28px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]">
                 {activeService.title}
               </h3>
-              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-lg:mx-auto max-lg:text-center md:max-w-[480px] lg:mt-3 lg:max-w-none lg:text-left lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
+              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-lg:mx-auto max-lg:text-center md:max-w-[640px] lg:mt-3 lg:max-w-none lg:text-left lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
                 {activeService.description}
               </p>
               <button

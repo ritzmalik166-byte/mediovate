@@ -129,22 +129,22 @@ export default function FlagshipServiceSection() {
             </div>
           </div>
 
-          <div className="flex min-w-0 flex-col gap-5 max-lg:gap-6 lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-stretch lg:gap-x-6 xl:grid-cols-[420px_1fr] xl:gap-x-16">
+          <div className="flex min-w-0 flex-col gap-5 max-lg:gap-6 md:grid md:grid-cols-2 md:items-start md:gap-x-6 md:gap-y-6 lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-stretch lg:gap-x-6 xl:grid-cols-[420px_1fr] xl:gap-x-16">
           <div className="flex min-w-0 flex-col">
             <h3 className="w-full text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:text-left md:text-[20px] md:leading-[30px] lg:text-[20px] lg:leading-[30px] xl:text-[24px] xl:leading-[34px]">
               Influencer Marketing That Builds Brands &amp; Drives Sales
             </h3>
 
-            <div className="mt-5 flex w-full flex-1 flex-col rounded-[20px] bg-[#FFF5EB] px-5 py-6 text-left md:items-center md:px-6 md:py-7 md:text-center lg:mt-6 lg:items-stretch lg:px-6 lg:py-7 lg:text-left xl:px-8 xl:py-8">
+            <div className="mt-5 flex w-full flex-1 flex-col rounded-[20px] bg-[#FFF5EB] px-5 py-6 text-left md:mt-6 md:px-6 md:py-7 lg:mt-6 lg:px-6 lg:py-7 xl:px-8 xl:py-8">
               <p className="w-full font-sans text-[18px] font-semibold leading-[28px] text-black md:text-[19px] xl:text-[20px]">
                 As a trusted:
               </p>
 
-              <div className="mt-4 flex w-full flex-col gap-2 md:mt-5 md:max-w-[500px] md:items-center md:gap-2.5 lg:max-w-none lg:items-stretch lg:gap-2 xl:mt-4 xl:gap-2">
+              <div className="mt-4 flex w-full flex-col gap-2 md:mt-5 md:gap-2.5 lg:max-w-none lg:gap-2 xl:mt-4 xl:gap-2">
                 {trustedAgencies.map((agency, index) => (
                   <p
                     key={index}
-                    className="flex w-full items-start gap-3 md:w-fit md:max-w-full lg:w-full"
+                    className="flex w-full items-start gap-3"
                   >
                     <ListStarIcon />
                     <span
@@ -158,7 +158,7 @@ export default function FlagshipServiceSection() {
                 ))}
               </div>
 
-              <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black md:mx-auto md:max-w-[500px] md:text-center lg:mx-0 lg:mt-auto lg:max-w-none lg:text-left">
+              <p className="mt-4 w-full font-open-sans text-[16px] font-normal leading-[28px] text-black lg:mt-auto">
                 We help brands create high-impact influencer campaigns that
                 actually convert.
               </p>
@@ -166,13 +166,13 @@ export default function FlagshipServiceSection() {
           </div>
 
           <div className="flex w-full min-w-0 flex-col max-md:items-center max-md:text-center md:text-left lg:items-stretch lg:text-left">
-            <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[240px] lg:h-[220px] xl:h-[280px]">
+            <div className="relative aspect-[1667/1250] w-full shrink-0 overflow-hidden rounded-[20px] max-md:mx-auto max-md:max-w-[560px] lg:aspect-auto lg:h-[220px] lg:max-w-none xl:h-[280px]">
               <Image
                 src="/assets/Home/website other parts-02.jpg"
                 alt="Influencer creating content for a brand campaign"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1280px) 30vw, 33vw" 
+                sizes="(max-width: 1024px) 50vw, 420px"
               />
             </div>
 
@@ -199,7 +199,7 @@ export default function FlagshipServiceSection() {
 
               <button
                 type="button"
-                className="group mt-6 flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[13px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:justify-start md:text-[14px] lg:mt-0 lg:h-[50px] lg:justify-start lg:px-3 lg:text-[13px] xl:h-[54px] xl:w-[379px] xl:px-8 xl:text-[16px]"
+                className="group mt-6 flex h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[50px] border border-transparent bg-[#A87C4F] px-4 text-center font-sans text-[13px] font-semibold leading-[20px] text-white transition-colors duration-300 hover:border-[#A87C4F] hover:bg-white hover:text-[#A87C4F] md:text-[14px] lg:mt-0 lg:h-[50px] lg:justify-start lg:px-3 lg:text-[13px] xl:h-[54px] xl:w-[379px] xl:px-8 xl:text-[16px]"
               >
                 Launch Your Influencer Campaign
                 <CampaignArrowIcon className="shrink-0" />
