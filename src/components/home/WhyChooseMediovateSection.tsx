@@ -111,8 +111,9 @@ function FeatureCardPair({
           src={image}
           alt={imageAlt}
           fill
-          className="object-contain object-center"
+          className="object-cover object-center"
           sizes="380px"
+          quality={90}
         />
       </div>
 
@@ -140,15 +141,16 @@ function MobileFeatureCard({
   description: string;
 }) {
   return (
-    <div className="w-full min-w-full shrink-0 basis-full px-1">
+    <div className="w-full min-w-full shrink-0 basis-full">
       <div className="flex w-full flex-col overflow-hidden rounded-[20px] border border-[#FFE7CE] bg-white">
-        <div className="relative h-[200px] w-full bg-[#FDF1E3]">
+        <div className="relative aspect-[1667/1281] w-full overflow-hidden bg-[#FDF1E3]">
           <Image
             src={image}
             alt={imageAlt}
             fill
-            className="object-contain object-center p-4"
-            sizes="100vw"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 560px, 380px"
+            quality={90}
           />
         </div>
         <div className="px-5 py-5 text-center">
@@ -177,13 +179,14 @@ function TabletFeatureCard({
 }) {
   return (
     <div className="flex h-full min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#FFE7CE] bg-white">
-      <div className="relative h-[160px] w-full bg-[#FDF1E3]">
+      <div className="relative aspect-[1667/1281] w-full overflow-hidden bg-[#FDF1E3]">
         <Image
           src={image}
           alt={imageAlt}
           fill
-          className="object-contain object-center p-3"
+          className="object-cover object-center"
           sizes="(max-width: 1024px) 50vw, 380px"
+          quality={90}
         />
       </div>
       <div className="flex flex-1 flex-col px-4 py-4">
