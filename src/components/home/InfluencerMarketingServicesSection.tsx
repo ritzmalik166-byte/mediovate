@@ -180,31 +180,31 @@ export default function InfluencerMarketingServicesSection() {
 
           <div
             ref={previewPanelRef}
-            className="flex min-w-0 flex-1 flex-col gap-5 max-md:w-full md:sticky md:top-20 md:flex-row md:gap-4 lg:gap-5 xl:static xl:contents"
+            className="flex min-w-0 flex-1 flex-col gap-5 max-md:w-full md:sticky md:top-20 md:gap-4 lg:flex-row lg:gap-5 xl:static xl:contents"
             aria-live="polite"
             aria-atomic="true"
           >
-            <div className="relative h-[260px] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-md:mx-auto max-md:max-w-[560px] md:h-[220px] md:max-w-none md:rounded-[16px] lg:h-[380px] lg:w-[min(100%,300px)] lg:rounded-[16px] xl:h-[547px] xl:w-[417px] xl:rounded-none">
+            <div className="relative aspect-[417/547] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[560px] md:rounded-[16px] lg:mx-0 lg:w-[min(100%,300px)] lg:max-w-none lg:rounded-[16px] xl:aspect-auto xl:h-[547px] xl:w-[417px] xl:rounded-none">
               <Image
                 key={activeService.image}
                 src={activeService.image}
                 alt={activeService.title}
                 fill
                 className="object-cover transition-opacity duration-300"
-                sizes="(max-width: 1280px) 40vw, 417px"
+                sizes="(max-width: 1024px) 560px, 300px, 417px"
               />
             </div>
 
-            <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-md:max-w-[560px] max-md:self-center md:items-stretch md:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
+            <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-lg:max-w-[560px] max-lg:self-center lg:items-stretch lg:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
               <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]">
                 {activeService.title}
               </h3>
-              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-md:mx-auto max-md:text-center md:mt-3 md:max-w-none md:text-[14px] md:leading-[24px] lg:mt-4 lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
+              <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-lg:mx-auto max-lg:text-center md:max-w-[480px] lg:mt-3 lg:max-w-none lg:text-left lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
                 {activeService.description}
               </p>
               <button
                 type="button"
-                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-md:mx-auto md:mt-5 md:justify-start lg:mt-6 xl:mt-10 xl:text-[16px]"
+                className="mt-6 flex items-center justify-center gap-2 font-sans text-[15px] font-semibold leading-[20px] text-black max-lg:mx-auto lg:mt-5 lg:justify-start xl:mt-10 xl:text-[16px]"
               >
                 Launch Your Campaign
                 <ServiceArrowIcon />
