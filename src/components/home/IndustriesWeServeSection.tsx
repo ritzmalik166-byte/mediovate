@@ -22,9 +22,11 @@ export default function IndustriesWeServeSection() {
       className="scroll-mt-24 border-y border-[#FFE4C8] bg-white pt-5 pb-10 md:py-12 lg:py-16"
     >
       <div className="mx-auto flex w-full max-w-[1366px] flex-col items-center px-4 md:px-8 lg:px-10">
-        <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">
-          Industries We Serve
-        </h2>
+        <div id="industries-content" className="w-full">
+          <h2 className="text-center font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:text-[60px] lg:leading-[72px]">
+            Industries We Serve
+          </h2>
+        </div>
 
         <p className="mt-3 w-full max-w-[801px] text-center font-sans text-[18px] font-semibold leading-[26px] text-black md:mt-4 md:text-[20px] md:leading-[30px] lg:text-[24px] lg:leading-[34px]">
           Influencer &amp; Digital Marketing Expertise Across Every Industry

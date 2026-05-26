@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { getFooterServiceLinkFromHash } from "@/data/footerServiceLinks";
+import {
+  DIGITAL_MARKETING_NAV_EVENT,
+  scrollToDigitalMarketingView,
+} from "@/lib/serviceNavigation";
 
 const slides: {
   title: string;
@@ -167,6 +172,48 @@ export default function DigitalMarketingServicesSection() {
     goToSlide((activeIndex + 1) % slides.length);
   };
 
+  const navigateToSlide = useCallback(
+    (slideIndex?: number) => {
+      let didChange = false;
+
+      if (slideIndex !== undefined && slideIndex >= 0) {
+        if (slideIndex !== activeIndex && !isImageTransitioning) {
+          goToSlide(slideIndex);
+          didChange = true;
+        }
+      }
+
+      window.setTimeout(() => {
+        scrollToDigitalMarketingView();
+      }, didChange ? 150 : 0);
+    },
+    [activeIndex, goToSlide, isImageTransitioning],
+  );
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const link = getFooterServiceLinkFromHash(window.location.hash);
+      if (link?.target.type !== "digital-marketing") return;
+
+      navigateToSlide(link.target.slideIndex);
+    };
+
+    const onNavigate = (event: Event) => {
+      const { slideIndex } = (
+        event as CustomEvent<{ hash: string; slideIndex?: number }>
+      ).detail;
+      navigateToSlide(slideIndex);
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener(DIGITAL_MARKETING_NAV_EVENT, onNavigate);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener(DIGITAL_MARKETING_NAV_EVENT, onNavigate);
+    };
+  }, [navigateToSlide]);
+
   const activeSlide = slides[activeIndex];
   const slideNumber = String(activeIndex + 1).padStart(2, "0");
 
@@ -176,7 +223,10 @@ export default function DigitalMarketingServicesSection() {
       className="scroll-mt-24 overflow-hidden bg-white pt-5 pb-10 md:py-12 lg:py-12 xl:py-16"
     >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10">
-        <div className="flex flex-col items-center gap-5 text-center md:gap-6 lg:items-start lg:gap-4 xl:flex-row xl:justify-between xl:gap-0 xl:text-left">
+        <div
+          id="digital-marketing-content"
+          className="flex flex-col items-center gap-5 text-center md:gap-6 lg:items-start lg:gap-4 xl:flex-row xl:justify-between xl:gap-0 xl:text-left"
+        >
           <h2 className="w-full shrink-0 font-sans text-[24px] leading-[34px] text-black md:text-[30px] md:leading-[42px] lg:text-left lg:text-[28px] lg:leading-[38px] xl:w-[520px] xl:text-[36px] xl:leading-[50px]">
             <span className="font-extrabold">Digital Marketing Services</span>
             <br />

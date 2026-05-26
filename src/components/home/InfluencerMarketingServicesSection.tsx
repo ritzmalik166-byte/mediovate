@@ -1,7 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  getInfluencerServiceIndexFromHash,
+  influencerServiceLinks,
+} from "@/data/influencerServiceLinks";
+import {
+  INFLUENCER_SERVICE_NAV_EVENT,
+  scrollToInfluencerDesignView,
+} from "@/lib/influencerNavigation";
 
 const services: {
   id: string;
@@ -127,12 +135,22 @@ export default function InfluencerMarketingServicesSection() {
   const activeService = services[activeIndex];
 
   const handleSelectService = useCallback(
-    (index: number) => {
-      if (index === activeIndex || isImageTransitioning) return;
+    (index: number, options?: { updateHash?: boolean; scrollPreview?: boolean }) => {
+      const { updateHash = true, scrollPreview = true } = options ?? {};
+
+      if (index === activeIndex || isImageTransitioning) return false;
 
       setOutgoingImageIndex(activeIndex);
       setIsImageTransitioning(true);
       setActiveIndex(index);
+
+      if (updateHash && typeof window !== "undefined") {
+        window.history.replaceState(
+          null,
+          "",
+          `#${influencerServiceLinks[index].hash}`,
+        );
+      }
 
       window.setTimeout(() => {
         setOutgoingImageIndex(null);
@@ -140,6 +158,7 @@ export default function InfluencerMarketingServicesSection() {
       }, 500);
 
       if (
+        scrollPreview &&
         typeof window !== "undefined" &&
         window.matchMedia("(max-width: 1023px)").matches
       ) {
@@ -150,9 +169,59 @@ export default function InfluencerMarketingServicesSection() {
           });
         });
       }
+
+      return true;
     },
     [activeIndex, isImageTransitioning],
   );
+
+  const navigateToService = useCallback(
+    (index: number) => {
+      if (index < 0) return;
+
+      const didChange = handleSelectService(index, {
+        updateHash: false,
+        scrollPreview: false,
+      });
+
+      window.setTimeout(() => {
+        scrollToInfluencerDesignView();
+      }, didChange ? 80 : 0);
+    },
+    [handleSelectService],
+  );
+
+  useEffect(() => {
+    const index = getInfluencerServiceIndexFromHash(window.location.hash);
+    if (index < 0) return;
+
+    setActiveIndex(index);
+
+    window.setTimeout(() => {
+      scrollToInfluencerDesignView();
+    }, 100);
+  }, []);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      navigateToService(getInfluencerServiceIndexFromHash(window.location.hash));
+    };
+
+    const onNavigate = (event: Event) => {
+      const { index } = (
+        event as CustomEvent<{ hash: string; index: number }>
+      ).detail;
+      navigateToService(index);
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener(INFLUENCER_SERVICE_NAV_EVENT, onNavigate);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener(INFLUENCER_SERVICE_NAV_EVENT, onNavigate);
+    };
+  }, [navigateToService]);
 
   return (
     <section
@@ -172,10 +241,11 @@ export default function InfluencerMarketingServicesSection() {
               return (
                 <button
                   key={service.id}
+                  id={influencerServiceLinks[index].hash}
                   type="button"
                   onClick={() => handleSelectService(index)}
                   aria-pressed={isActive}
-                  className="flex min-h-[72px] w-full cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:min-h-[72px] xl:h-[92px] xl:w-[429px]"
+                  className="flex min-h-[72px] w-full scroll-mt-28 cursor-pointer items-center border border-[#D8D2D2] bg-white text-left -mt-px transition-colors duration-200 first:mt-0 hover:bg-[#FFFBF7] md:min-h-[76px] lg:min-h-[72px] xl:h-[92px] xl:w-[429px]"
                 >
                   <span className="flex h-full w-[56px] shrink-0 items-center justify-center font-sans text-[14px] font-medium leading-[26px] text-black md:w-[64px] md:text-[15px] lg:w-[52px] lg:text-[14px] xl:w-[72px] xl:text-[16px]">
                     {service.id}
@@ -198,6 +268,7 @@ export default function InfluencerMarketingServicesSection() {
           </div>
 
           <div
+            id="influencer-marketing-preview"
             ref={previewPanelRef}
             className="flex min-w-0 flex-1 flex-col gap-5 max-lg:w-full lg:sticky lg:top-20 lg:flex-row lg:gap-5 xl:static xl:contents"
             aria-live="polite"

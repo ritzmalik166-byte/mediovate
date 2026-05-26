@@ -99,7 +99,7 @@ export default function WhoWeAreSection() {
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-8 xl:px-10 xl:py-12">
         <div className="flex flex-col items-stretch gap-8 max-lg:gap-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-6 xl:flex xl:flex-row xl:gap-x-0">
           <div className="contents lg:block lg:col-start-1">
-            <div className="max-lg:order-1">
+            <div className="max-lg:order-1" id="who-we-are-content">
               <h2 className="w-full text-[36px] font-medium leading-[44px] text-black max-lg:text-center md:text-[48px] md:leading-[56px] lg:text-left lg:text-[52px] lg:leading-[68px] xl:w-[702px] xl:text-[76px] xl:leading-[102px]">
                 Influence.
                 <br />

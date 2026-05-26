@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { getFooterServiceLinkFromHash } from "@/data/footerServiceLinks";
+import {
+  OTHER_SERVICE_NAV_EVENT,
+  scrollToOtherServicesView,
+} from "@/lib/serviceNavigation";
 
 const creativeServices: {
   id: string;
@@ -122,24 +127,69 @@ export default function OtherServicesSection() {
   );
   const [isImageTransitioning, setIsImageTransitioning] = useState(false);
 
-  const handleAccordionClick = useCallback(
+  const expandAccordion = useCallback(
     (index: number) => {
-      if (isImageTransitioning) return;
-
-      const nextIndex = expandedIndex === index ? 0 : index;
-      if (nextIndex === expandedIndex) return;
+      if (isImageTransitioning) return false;
+      if (index === expandedIndex) return false;
 
       setOutgoingImageIndex(expandedIndex);
       setIsImageTransitioning(true);
-      setExpandedIndex(nextIndex);
+      setExpandedIndex(index);
 
       window.setTimeout(() => {
         setOutgoingImageIndex(null);
         setIsImageTransitioning(false);
       }, 500);
+
+      return true;
     },
     [expandedIndex, isImageTransitioning],
   );
+
+  const handleAccordionClick = useCallback(
+    (index: number) => {
+      const nextIndex = expandedIndex === index ? 0 : index;
+      expandAccordion(nextIndex);
+    },
+    [expandAccordion, expandedIndex],
+  );
+
+  const navigateToAccordion = useCallback(
+    (index: number) => {
+      if (index < 0) return;
+
+      const didChange = expandAccordion(index);
+
+      window.setTimeout(() => {
+        scrollToOtherServicesView();
+      }, didChange ? 150 : 0);
+    },
+    [expandAccordion],
+  );
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const link = getFooterServiceLinkFromHash(window.location.hash);
+      if (link?.target.type !== "other-services") return;
+
+      navigateToAccordion(link.target.accordionIndex);
+    };
+
+    const onNavigate = (event: Event) => {
+      const { accordionIndex } = (
+        event as CustomEvent<{ hash: string; accordionIndex: number }>
+      ).detail;
+      navigateToAccordion(accordionIndex);
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener(OTHER_SERVICE_NAV_EVENT, onNavigate);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener(OTHER_SERVICE_NAV_EVENT, onNavigate);
+    };
+  }, [navigateToAccordion]);
 
   const activeService = creativeServices[expandedIndex];
 
@@ -170,7 +220,10 @@ export default function OtherServicesSection() {
         </div>
       </div>
 
-      <div className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-10 lg:py-12 xl:mt-12 xl:py-14">
+      <div
+        id="other-services-content"
+        className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-10 lg:py-12 xl:mt-12 xl:py-14"
+      >
         <div className="mx-auto flex max-w-[1366px] flex-col items-stretch gap-8 px-4 md:gap-10 md:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-8 lg:gap-y-8 lg:px-8 xl:flex xl:flex-row xl:justify-center xl:gap-0 xl:px-10">
           <div className="w-full shrink-0 max-lg:max-w-[560px] max-lg:self-center lg:col-start-1 lg:row-start-1 lg:w-full lg:max-w-none lg:pt-0 xl:w-[320px] xl:max-w-none xl:pt-4">
             <h3 className="w-full text-center font-sans text-[24px] leading-[34px] text-black md:text-[28px] md:leading-[40px] lg:text-left xl:w-[363px] xl:text-[36px] xl:leading-[50px]">
@@ -218,7 +271,10 @@ export default function OtherServicesSection() {
             ) : null}
           </div>
 
-          <div className="w-full shrink-0 max-lg:max-w-[560px] max-lg:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]">
+          <div
+            id="other-services-accordion"
+            className="w-full shrink-0 max-lg:max-w-[560px] max-lg:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]"
+          >
             {creativeServices.map((service, index) => {
               const isExpanded = expandedIndex === index;
 

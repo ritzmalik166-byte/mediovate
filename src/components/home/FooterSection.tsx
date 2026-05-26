@@ -1,32 +1,21 @@
 "use client";
 
 import MediovateLogo from "./MediovateLogo";
-
-const influencerMarketingLinks = [
-  "Influencer Identification",
-  "Micro & Macro Campaigns",
-  "Campaign Management",
-  "ROI & Analytics",
-  "Brand Partnerships",
-  "UGC & Regional",
-];
-
-const servicesLinks = [
-  "Brand Identity Design",
-  "Social Media Creatives",
-  "SEO Services",
-  "PPC & Google Ads",
-  "Content Marketing",
-  "Web Development",
-];
-
-const companyLinks = ["About Mediovate", "Our Process", "Industries"];
+import { companyLinks } from "@/data/companyLinks";
+import { footerServiceLinks } from "@/data/footerServiceLinks";
+import { influencerServiceLinks } from "@/data/influencerServiceLinks";
+import { scrollToCompanySection } from "@/lib/companyNavigation";
+import { scrollToInfluencerService } from "@/lib/influencerNavigation";
+import { scrollToFooterService } from "@/lib/serviceNavigation";
 
 const columnHeadingClassName =
   "font-open-sans text-[16px] font-bold uppercase leading-[28px] text-[#050102] max-md:text-center md:text-left";
 
 const listItemClassName =
   "font-open-sans text-[15px] font-normal leading-[35px] text-[#050102] max-md:text-center max-md:leading-[28px] md:text-left md:leading-[32px] xl:leading-[35px]";
+
+const footerAnchorClassName =
+  "cursor-pointer transition-colors duration-200 hover:text-[#A87C4F] focus-visible:text-[#A87C4F] focus-visible:outline-none";
 
 function BackToTopIcon() {
   return (
@@ -92,18 +81,29 @@ function FooterColumn({
   );
 }
 
-function FooterLinkList({
+function FooterAnchorLinkList({
   items,
   className,
+  onLinkClick,
 }: {
-  items: string[];
+  items: ReadonlyArray<{ label: string; hash: string }>;
   className?: string;
+  onLinkClick: (hash: string) => void;
 }) {
   return (
     <ul className={className}>
       {items.map((item) => (
-        <li key={item} className={listItemClassName}>
-          {item}
+        <li key={item.hash} className={listItemClassName}>
+          <a
+            href={`#${item.hash}`}
+            onClick={(event) => {
+              event.preventDefault();
+              onLinkClick(item.hash);
+            }}
+            className={footerAnchorClassName}
+          >
+            {item.label}
+          </a>
         </li>
       ))}
     </ul>
@@ -111,6 +111,11 @@ function FooterLinkList({
 }
 
 function scrollToTop() {
+  if (window.__lenis) {
+    window.__lenis.scrollTo(0);
+    return;
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -154,30 +159,33 @@ export default function FooterSection() {
             <div className="w-full xl:col-start-1 xl:row-start-2">
               <FooterColumn title="Get in Touch">
                 <div className="font-open-sans text-[15px] font-normal leading-[32px] text-[#050102] max-md:text-center md:text-left md:text-[16px] md:leading-[36px] lg:leading-[34px] xl:leading-[38px]">
-                  <p>hello@mediovateagency.com</p>
-                  <p>+91 12345 67890</p>
+                  <p>info@mediovate.in</p>
+                  <p>+91 8920024793</p>
                 </div>
               </FooterColumn>
             </div>
 
             <div className="contents sm:col-span-2 lg:col-span-3 xl:col-start-2 xl:row-start-2 xl:flex xl:items-start xl:gap-x-12">
               <FooterColumn title="Influencer Marketing">
-                <FooterLinkList
-                  items={influencerMarketingLinks}
+                <FooterAnchorLinkList
+                  items={influencerServiceLinks}
+                  onLinkClick={scrollToInfluencerService}
                   className="w-full xl:h-[246px] xl:w-[225px]"
                 />
               </FooterColumn>
 
               <FooterColumn title="Services">
-                <FooterLinkList
-                  items={servicesLinks}
+                <FooterAnchorLinkList
+                  items={footerServiceLinks}
+                  onLinkClick={scrollToFooterService}
                   className="w-full xl:h-[246px] xl:w-[225px]"
                 />
               </FooterColumn>
 
               <FooterColumn title="Company">
-                <FooterLinkList
+                <FooterAnchorLinkList
                   items={companyLinks}
+                  onLinkClick={scrollToCompanySection}
                   className="w-full xl:h-[138px] xl:w-[168px]"
                 />
               </FooterColumn>
