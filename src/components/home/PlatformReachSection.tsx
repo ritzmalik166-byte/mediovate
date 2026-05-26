@@ -209,8 +209,13 @@ export default function PlatformReachSection() {
               sizes="(max-width: 1024px) 360px, 472px"
             />
 
-            <div className="absolute inset-0 flex items-center justify-center px-4 md:px-6 lg:px-10">
-              <p className="w-full text-center font-sans text-[26px] font-medium leading-[1.2] text-white md:text-[36px] lg:text-[28px] xl:w-[407px] xl:text-[49px] xl:leading-normal">
+            <div
+              className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.38)_55%,rgba(0,0,0,0.48)_100%)]"
+              aria-hidden="true"
+            />
+
+            <div className="absolute inset-0 z-10 flex items-center justify-center px-4 md:px-6 lg:px-10">
+              <p className="w-full text-center font-sans text-[26px] font-medium leading-[1.2] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] md:text-[36px] lg:text-[28px] xl:w-[407px] xl:text-[49px] xl:leading-normal">
                 Platform Reach
                 <br />
                 &amp; Impact
