@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, type ReactNode } from "react";
+import { useCallback, useRef, useState, type ReactNode } from "react";
 
 const services: {
   id: string;
@@ -119,21 +119,40 @@ function ServiceArrowIcon() {
 
 export default function InfluencerMarketingServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [outgoingImageIndex, setOutgoingImageIndex] = useState<number | null>(
+    null,
+  );
+  const [isImageTransitioning, setIsImageTransitioning] = useState(false);
   const previewPanelRef = useRef<HTMLDivElement>(null);
   const activeService = services[activeIndex];
 
-  const handleSelectService = (index: number) => {
-    setActiveIndex(index);
+  const handleSelectService = useCallback(
+    (index: number) => {
+      if (index === activeIndex || isImageTransitioning) return;
 
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches) {
-      window.requestAnimationFrame(() => {
-        previewPanelRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
+      setOutgoingImageIndex(activeIndex);
+      setIsImageTransitioning(true);
+      setActiveIndex(index);
+
+      window.setTimeout(() => {
+        setOutgoingImageIndex(null);
+        setIsImageTransitioning(false);
+      }, 500);
+
+      if (
+        typeof window !== "undefined" &&
+        window.matchMedia("(max-width: 1023px)").matches
+      ) {
+        window.requestAnimationFrame(() => {
+          previewPanelRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+          });
         });
-      });
-    }
-  };
+      }
+    },
+    [activeIndex, isImageTransitioning],
+  );
 
   return (
     <section
@@ -186,13 +205,26 @@ export default function InfluencerMarketingServicesSection() {
           >
             <div className="relative aspect-[417/547] w-full shrink-0 overflow-hidden rounded-[12px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[640px] md:rounded-[16px] lg:mx-0 lg:w-[min(100%,300px)] lg:max-w-none lg:rounded-[16px] xl:aspect-auto xl:h-[547px] xl:w-[417px] xl:rounded-none">
               <Image
-                key={activeService.image}
                 src={activeService.image}
                 alt={activeService.title}
                 fill
-                className="object-cover transition-opacity duration-300"
+                className={`object-cover ${
+                  isImageTransitioning
+                    ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
+                    : ""
+                }`}
                 sizes="(max-width: 1024px) 640px, 300px, 417px"
               />
+              {outgoingImageIndex !== null ? (
+                <Image
+                  src={services[outgoingImageIndex].image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 640px, 300px, 417px"
+                  className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
+                  aria-hidden="true"
+                />
+              ) : null}
             </div>
 
             <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-lg:max-w-[640px] max-lg:self-center lg:items-stretch lg:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
