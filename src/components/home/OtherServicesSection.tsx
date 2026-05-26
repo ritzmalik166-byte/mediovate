@@ -172,7 +172,7 @@ export default function OtherServicesSection() {
 
       <div className="mt-8 bg-[#FFF5EB] py-8 md:mt-10 md:py-10 lg:mt-10 lg:py-12 xl:mt-12 xl:py-14">
         <div className="mx-auto flex max-w-[1366px] flex-col items-stretch gap-8 px-4 md:gap-10 md:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-8 lg:gap-y-8 lg:px-8 xl:flex xl:flex-row xl:justify-center xl:gap-0 xl:px-10">
-          <div className="w-full shrink-0 pt-0 md:max-w-[560px] md:self-center lg:col-start-1 lg:row-start-1 lg:w-full lg:max-w-none lg:pt-0 xl:w-[320px] xl:max-w-none xl:pt-4">
+          <div className="w-full shrink-0 max-lg:max-w-[560px] max-lg:self-center lg:col-start-1 lg:row-start-1 lg:w-full lg:max-w-none lg:pt-0 xl:w-[320px] xl:max-w-none xl:pt-4">
             <h3 className="w-full text-center font-sans text-[24px] leading-[34px] text-black md:text-[28px] md:leading-[40px] lg:text-left xl:w-[363px] xl:text-[36px] xl:leading-[50px]">
               <span className="font-extrabold">Creative Agency Services</span>{" "}
               <span className="font-medium">That Elevate Your Brand Identity</span>
@@ -194,7 +194,7 @@ export default function OtherServicesSection() {
             </button>
           </div>
 
-          <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[20px] md:h-[300px] md:max-w-[560px] md:self-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:h-full lg:min-h-[320px] lg:w-full lg:max-w-none xl:mx-10 xl:h-[519px] xl:w-[367px]">
+          <div className="relative aspect-[367/519] w-full shrink-0 overflow-hidden rounded-[20px] max-lg:mx-auto max-lg:max-w-[560px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:max-w-none xl:aspect-auto xl:mx-10 xl:h-[519px] xl:w-[367px]">
             <Image
               src={activeService.image}
               alt={activeService.imageAlt}
@@ -204,21 +204,21 @@ export default function OtherServicesSection() {
                   ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
                   : ""
               }`}
-              sizes="(max-width: 1024px) 560px, 367px"
+              sizes="(max-width: 1024px) 560px, 380px, 367px"
             />
             {outgoingImageIndex !== null ? (
               <Image
                 src={creativeServices[outgoingImageIndex].image}
                 alt=""
                 fill
-                sizes="(max-width: 1024px) 560px, 367px"
+                sizes="(max-width: 1024px) 560px, 380px, 367px"
                 className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
                 aria-hidden="true"
               />
             ) : null}
           </div>
 
-          <div className="w-full shrink-0 md:max-w-[640px] md:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]">
+          <div className="w-full shrink-0 max-lg:max-w-[560px] max-lg:self-center lg:col-start-1 lg:row-start-2 lg:w-full lg:max-w-none xl:w-[520px]">
             {creativeServices.map((service, index) => {
               const isExpanded = expandedIndex === index;
 

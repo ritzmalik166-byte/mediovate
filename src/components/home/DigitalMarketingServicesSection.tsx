@@ -201,7 +201,7 @@ export default function DigitalMarketingServicesSection() {
         </div>
 
         <div className="mt-8 flex flex-col gap-5 md:mt-12 md:gap-6 lg:mt-10 lg:flex-row lg:items-stretch lg:gap-6 xl:mt-16 xl:gap-0">
-          <div className="flex w-full shrink-0 flex-col justify-between rounded-[20px] bg-[#FFF5EB] px-5 py-6 md:px-7 md:py-8 lg:min-h-[400px] lg:flex-1 lg:px-7 lg:py-8 xl:h-[472px] xl:w-[445px] xl:flex-none xl:px-10 xl:py-10">
+          <div className="order-2 flex w-full shrink-0 flex-col justify-between rounded-[20px] bg-[#FFF5EB] px-5 py-6 md:px-7 md:py-8 lg:order-1 lg:min-h-[400px] lg:flex-1 lg:px-7 lg:py-8 xl:h-[472px] xl:w-[445px] xl:flex-none xl:px-10 xl:py-10">
             <div className="overflow-hidden">
               <div
                 key={contentKey}
@@ -251,7 +251,7 @@ export default function DigitalMarketingServicesSection() {
             </div>
           </div>
 
-          <div className="relative h-[240px] w-full min-w-0 flex-1 shrink-0 overflow-hidden rounded-[20px] bg-[#f5f0ea] md:h-[320px] lg:h-[400px] xl:h-[472px] xl:w-[835px] xl:flex-none">
+          <div className="relative order-1 aspect-[835/472] w-full min-w-0 shrink-0 overflow-hidden rounded-[20px] bg-[#f5f0ea] max-lg:mx-auto max-lg:max-w-[560px] lg:order-2 lg:flex-1 xl:aspect-auto xl:h-[472px] xl:w-[835px] xl:flex-none">
             <Image
               src={slides[activeIndex].image}
               alt={slides[activeIndex].title}
@@ -260,14 +260,14 @@ export default function DigitalMarketingServicesSection() {
                   ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
                   : ""
                 }`}
-              sizes="(max-width: 1024px) 100vw, 835px"
+              sizes="(max-width: 1024px) 560px, 835px"
             />
             {outgoingImageIndex !== null ? (
               <Image
                 src={slides[outgoingImageIndex].image}
                 alt=""
                 fill
-                sizes="(max-width: 1024px) 100vw, 835px"
+                sizes="(max-width: 1024px) 560px, 835px"
                 className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
                 aria-hidden="true"
               />
