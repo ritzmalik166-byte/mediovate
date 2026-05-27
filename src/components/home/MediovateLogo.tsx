@@ -49,6 +49,7 @@ export default function MediovateLogo({
     <Image
       src="/assets/Home/mediovate_logo.png"
       alt="Mediovate"
+      title="Mediovate - Return to homepage"
       width={190}
       height={22}
       priority={priority}

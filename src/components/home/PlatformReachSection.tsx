@@ -99,7 +99,8 @@ function LinkedInIcon() {
   return (
     <Image
       src="/assets/Home/Linkedin.png"
-      alt=""
+      alt="LinkedIn logo"
+      title="LinkedIn logo"
       width={41}
       height={41}
       className="h-[41px] w-[41px] shrink-0"
@@ -203,6 +204,7 @@ export default function PlatformReachSection() {
             <Image
               src="/assets/Home/website other parts-03.jpg"
               alt="Influencer reviewing content on her phone"
+              title="Influencer reviewing content on her phone"
               fill
               priority
               className="object-cover"

@@ -303,6 +303,7 @@ export default function DigitalMarketingServicesSection() {
             <Image
               src={slides[activeIndex].image}
               alt={slides[activeIndex].title}
+              title={slides[activeIndex].title}
               fill
               className={`object-cover ${isImageTransitioning
                   ? "animate-[dm-image-fade-in_0.5s_ease-out_forwards]"
@@ -313,7 +314,8 @@ export default function DigitalMarketingServicesSection() {
             {outgoingImageIndex !== null ? (
               <Image
                 src={slides[outgoingImageIndex].image}
-                alt=""
+                alt={slides[outgoingImageIndex].title}
+                title={slides[outgoingImageIndex].title}
                 fill
                 sizes="(max-width: 1024px) 560px, 835px"
                 className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"

@@ -7,16 +7,20 @@ export default function HeroSection() {
       id="hero"
       className="relative box-border h-[649px] max-h-[649px] w-full scroll-mt-24 overflow-hidden max-lg:h-[580px] max-lg:min-h-[580px] max-lg:max-h-none md:min-h-[580px] lg:h-[649px] lg:max-h-[649px]"
     >
+      <h1 className="sr-only">Best Influencer marketing agency in India</h1>
+
       <Image
         src="/assets/Home/banner-06 (2).jpg"
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        alt="banner"
+        alt="Mediovate influencer marketing agency hero background"
+        title="Mediovate influencer marketing agency hero background"
         className="object-cover object-center"
       />
       <Image
         src="/assets/Home/mediovate hero banner.jpg"
-        alt=""
+        alt="Mediovate creative influencer marketing agency hero banner"
+        title="Mediovate creative influencer marketing agency hero banner"
         fill
         priority
         className="hidden object-cover object-right-bottom lg:block"

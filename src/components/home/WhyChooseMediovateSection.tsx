@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CARD_PAIR_WIDTH = 760;
 const CARD_PAIR_GAP = 24;
@@ -110,6 +110,7 @@ function FeatureCardPair({
         <Image
           src={image}
           alt={imageAlt}
+          title={imageAlt}
           fill
           className="object-cover object-center"
           sizes="380px"
@@ -147,6 +148,7 @@ function MobileFeatureCard({
           <Image
             src={image}
             alt={imageAlt}
+            title={imageAlt}
             fill
             className="object-cover object-center"
             sizes="(max-width: 768px) 560px, 380px"
@@ -154,9 +156,9 @@ function MobileFeatureCard({
           />
         </div>
         <div className="px-5 py-5 text-center">
-          <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black">
+          <p className="font-sans text-[18px] font-semibold leading-[26px] text-black">
             {title}
-          </h3>
+          </p>
           <p className="mt-3 font-open-sans text-[14px] font-normal leading-[24px] text-black">
             {description}
           </p>
@@ -183,6 +185,7 @@ function TabletFeatureCard({
         <Image
           src={image}
           alt={imageAlt}
+          title={imageAlt}
           fill
           className="object-cover object-center"
           sizes="(max-width: 1024px) 50vw, 380px"
@@ -190,9 +193,9 @@ function TabletFeatureCard({
         />
       </div>
       <div className="flex flex-1 flex-col px-4 py-4">
-        <h3 className="font-sans text-[15px] font-semibold leading-[22px] text-black">
+        <p className="font-sans text-[15px] font-semibold leading-[22px] text-black">
           {title}
-        </h3>
+        </p>
         <p className="mt-2 font-open-sans text-[13px] font-normal leading-[20px] text-black">
           {description}
         </p>
@@ -201,10 +204,33 @@ function TabletFeatureCard({
   );
 }
 
-const tabletCarouselCards = [...featureCards, featureCards[0]];
+type ViewportSize = "mobile" | "tablet" | "desktop";
+
+function useViewportSize(): ViewportSize {
+  const [size, setSize] = useState<ViewportSize>("desktop");
+
+  useEffect(() => {
+    const update = () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        setSize("desktop");
+      } else if (window.matchMedia("(min-width: 768px)").matches) {
+        setSize("tablet");
+      } else {
+        setSize("mobile");
+      }
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return size;
+}
 
 export default function WhyChooseMediovateSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const viewportSize = useViewportSize();
 
   const goToPrevious = () => {
     setActiveIndex(
@@ -215,6 +241,11 @@ export default function WhyChooseMediovateSection() {
   const goToNext = () => {
     setActiveIndex((index) => (index + 1) % featureCards.length);
   };
+
+  const tabletVisibleCards = [
+    featureCards[activeIndex],
+    featureCards[(activeIndex + 1) % featureCards.length],
+  ];
 
   return (
     <section
@@ -260,54 +291,49 @@ export default function WhyChooseMediovateSection() {
           </div>
         </div>
 
-        {/* Mobile: single card */}
-        <div className="relative mt-6 md:hidden">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {featureCards.map((card) => (
-                <MobileFeatureCard key={card.title} {...card} />
+        {viewportSize === "mobile" ? (
+          <div className="relative mt-6">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              >
+                {featureCards.map((card) => (
+                  <MobileFeatureCard key={card.title} {...card} />
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {viewportSize === "tablet" ? (
+          <div
+            className="relative mt-6 overflow-hidden"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {tabletVisibleCards.map((card) => (
+                <TabletFeatureCard key={card.title} {...card} />
               ))}
             </div>
           </div>
-        </div>
+        ) : null}
 
-        {/* Tablet: two cards with smooth slide */}
-        <div
-          className="relative mt-6 hidden overflow-hidden md:block lg:hidden"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${activeIndex * 50}%)` }}
-          >
-            {tabletCarouselCards.map((card, index) => (
-              <div
-                key={`${card.title}-${index}`}
-                className="box-border w-1/2 shrink-0 basis-1/2 px-2"
-              >
-                <TabletFeatureCard {...card} />
-              </div>
-            ))}
+        {viewportSize === "desktop" ? (
+          <div className="mt-10 overflow-hidden lg:mt-12">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${activeIndex * CARD_PAIR_STEP}px)`,
+              }}
+            >
+              {featureCards.map((card) => (
+                <FeatureCardPair key={card.title} {...card} />
+              ))}
+            </div>
           </div>
-        </div>
-
-        {/* Desktop: image + text pair carousel */}
-        <div className="mt-10 hidden overflow-hidden lg:mt-12 lg:block">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(-${activeIndex * CARD_PAIR_STEP}px)`,
-            }}
-          >
-            {featureCards.map((card) => (
-              <FeatureCardPair key={card.title} {...card} />
-            ))}
-          </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

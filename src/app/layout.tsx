@@ -21,9 +21,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Mediovate | Best Influencer Marketing Agency in India",
+  metadataBase: new URL("https://www.mediovate.in"),
+  title: "Best Influencer Marketing Agency in India | Mediovate",
   description:
-    "Mediovate — creative & digital growth solutions. India's best influencer marketing agency.",
+    "Looking for the best influencer marketing agency in India? Mediovate delivers ROI-driven influencer campaigns, creator collaborations, UGC content, and brand promotions for startups and enterprises.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/assets/Home/m_logo.png",
     apple: "/assets/Home/m_logo.png",

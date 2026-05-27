@@ -234,6 +234,12 @@ export default function InfluencerMarketingServicesSection() {
           Our Influencer Marketing Services
         </h2>
 
+        <div className="sr-only">
+          {services.map((service) => (
+            <h3 key={`seo-${service.id}`}>{service.title}</h3>
+          ))}
+        </div>
+
         <div className="mt-8 flex flex-col gap-6 md:mt-10 lg:mt-10 lg:flex-row lg:items-start lg:gap-6 xl:mt-12 xl:justify-center xl:gap-0">
           <div className="flex w-full shrink-0 flex-col lg:w-[min(100%,240px)] xl:w-auto">
             {services.map((service, index) => {
@@ -279,6 +285,7 @@ export default function InfluencerMarketingServicesSection() {
               <Image
                 src={activeService.image}
                 alt={activeService.title}
+                title={activeService.title}
                 fill
                 className={`object-cover ${
                   isImageTransitioning
@@ -290,7 +297,8 @@ export default function InfluencerMarketingServicesSection() {
               {outgoingImageIndex !== null ? (
                 <Image
                   src={services[outgoingImageIndex].image}
-                  alt=""
+                  alt={services[outgoingImageIndex].title}
+                  title={services[outgoingImageIndex].title}
                   fill
                   sizes="(max-width: 1024px) 640px, 300px, 417px"
                   className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"
@@ -300,9 +308,12 @@ export default function InfluencerMarketingServicesSection() {
             </div>
 
             <div className="flex w-full min-w-0 flex-1 flex-col items-center py-0 text-center max-lg:max-w-[640px] max-lg:self-center lg:items-stretch lg:text-left lg:py-2 xl:ml-10 xl:min-h-[547px] xl:max-w-none xl:py-8">
-              <h3 className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[20px] md:leading-[28px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]">
+              <p
+                aria-hidden="true"
+                className="font-sans text-[18px] font-semibold leading-[26px] text-black md:text-[20px] md:leading-[28px] lg:text-[20px] lg:leading-[28px] xl:text-[24px] xl:leading-[34px]"
+              >
                 {activeService.title}
-              </h3>
+              </p>
               <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black max-lg:mx-auto max-lg:text-center md:max-w-[640px] lg:mt-3 lg:max-w-none lg:text-left lg:text-[14px] lg:leading-[24px] xl:mt-6 xl:w-[382px] xl:text-[16px] xl:leading-[28px]">
                 {activeService.description}
               </p>

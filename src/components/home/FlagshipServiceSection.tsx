@@ -171,6 +171,7 @@ export default function FlagshipServiceSection() {
               <Image
                 src="/assets/Home/website other parts-02.jpg"
                 alt="Influencer creating content for a brand campaign"
+                title="Influencer creating content for a brand campaign"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 50vw, 420px"

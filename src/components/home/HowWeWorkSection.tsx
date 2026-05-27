@@ -178,9 +178,9 @@ function MobileProcessStep({
         <span className="mb-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FFD2A3] font-sans text-[14px] font-semibold text-[#5c3d2e]">
           {stepNumber}
         </span>
-        <h3 className="font-sans text-[16px] font-semibold leading-[24px] md:text-[17px]">
+        <p className="font-sans text-[16px] font-semibold leading-[24px] md:text-[17px]">
           {title}
-        </h3>
+        </p>
         <p className="mt-2 font-open-sans text-[13px] font-normal leading-[20px] md:text-[14px] md:leading-[22px]">
           {description}
         </p>

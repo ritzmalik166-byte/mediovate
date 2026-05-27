@@ -211,7 +211,9 @@ export default function Navbar() {
             >
               <Image
                 src="/assets/Home/hamburger_menu.png"
-                alt=""
+                alt="Menu icon"
+                title="Open navigation menu"
+                aria-hidden="true"
                 width={24}
                 height={24}
                 className={`h-6 w-6 object-contain transition-all duration-300 ${

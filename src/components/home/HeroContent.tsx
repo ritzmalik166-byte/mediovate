@@ -53,43 +53,42 @@ function SlashIcon({ className }: { className?: string }) {
 
 export default function HeroContent() {
   return (
-    <div className="flex w-full max-w-full flex-col items-center gap-1 px-1 text-center max-md:gap-1.5 md:gap-2 lg:gap-1 lg:px-0">
-      <div className="flex w-full justify-center">
-        <div className="relative inline-block pr-8 max-md:pr-8 md:pr-12 lg:pr-14">
+    <div
+      aria-hidden="true"
+      className="flex w-full max-w-full flex-col items-center gap-1 px-1 text-center max-md:gap-1.5 md:gap-2 lg:gap-1 lg:px-0"
+    >
+      <span className="flex w-full justify-center">
+        <span className="relative inline-block pr-8 max-md:pr-8 md:pr-12 lg:pr-14">
           <span
             className="pointer-events-none absolute right-[-14px] top-1/2 z-0 -translate-y-[66%] -translate-x-[45%] scale-[0.5] max-md:right-[-14px] md:right-[-18px] md:scale-[0.65] lg:right-[-26px] lg:scale-100"
-            aria-hidden="true"
           >
             <StarIcon />
           </span>
           <span className="relative z-10 text-[36px] font-bold leading-none text-white md:text-[48px] lg:text-[70px]">
             Best
           </span>
-        </div>
-      </div>
+        </span>
+      </span>
 
-      <h1 className="m-0 w-full max-w-full px-1">
-        <Image
-          src="/assets/Home/influencer_marketing_2.png"
-          alt="Influencer Marketing"
-          width={535}
-          height={167}
-          className="mx-auto w-full max-w-[min(100%,268px)] object-contain md:max-w-[min(100%,380px)] lg:max-w-[535px] lg:w-[535px]"
-          priority
-        />
-      </h1>
+      <Image
+        src="/assets/Home/influencer_marketing_2.png"
+        alt="Mediovate hero headline graphic"
+        title="Mediovate hero headline graphic"
+        aria-hidden="true"
+        width={535}
+        height={167}
+        className="mx-auto mt-1 w-full max-w-[min(100%,268px)] object-contain md:max-w-[min(100%,380px)] lg:mt-0 lg:max-w-[535px] lg:w-[535px]"
+        priority
+      />
 
-      <div className="relative w-full max-w-full px-1">
-        <h2 className="m-0 text-center text-[18px] font-semibold uppercase leading-[1.15] text-white md:text-[28px] md:leading-none lg:text-[40px]">
-          Agency{" "}
-          <span className="relative inline-block font-bold">
-            in India
-            <span className="absolute left-1/2 top-[calc(100%-4px)] -translate-x-1/2 md:top-[calc(100%-6px)] lg:top-[calc(100%-8px)]">
-              <SlashIcon className="h-[12px] w-[110px] md:h-[16px] md:w-[150px] lg:h-[25px] lg:w-[218px]" />
-            </span>
+      <span className="relative mt-1 block w-full max-w-full px-1">
+        <span className="m-0 block text-center text-[18px] font-semibold uppercase leading-[1.15] text-white md:text-[28px] md:leading-none lg:text-[40px]">
+          Agency in India
+          <span className="absolute left-1/2 top-[calc(100%-4px)] -translate-x-1/2 md:top-[calc(100%-6px)] lg:top-[calc(100%-8px)]">
+            <SlashIcon className="h-[12px] w-[110px] md:h-[16px] md:w-[150px] lg:h-[25px] lg:w-[218px]" />
           </span>
-        </h2>
-      </div>
+        </span>
+      </span>
 
       <div className="mt-2 flex w-full max-w-[240px] items-center gap-2 max-md:mt-2 md:mt-3 md:max-w-[300px] md:gap-3 lg:mt-3 lg:max-w-[340px] lg:gap-4">
         <span className="h-px flex-1 bg-white/70" />
@@ -100,8 +99,8 @@ export default function HeroContent() {
       </div>
 
       <div className="text-center text-[13px] font-semibold uppercase leading-[18px] tracking-wide text-white md:text-[18px] md:leading-[24px] lg:text-[25px] lg:leading-[32px] lg:tracking-normal">
-        <p>Creative &amp; Digital</p>
-        <p>Growth Solutions</p>
+        <p className="m-0">Creative &amp; Digital</p>
+        <p className="m-0">Growth Solutions</p>
       </div>
     </div>
   );

@@ -100,11 +100,11 @@ export default function WhoWeAreSection() {
         <div className="flex flex-col items-stretch gap-8 max-lg:gap-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-6 xl:flex xl:flex-row xl:gap-x-0">
           <div className="contents lg:block lg:col-start-1">
             <div className="max-lg:order-1" id="who-we-are-content">
-              <h2 className="w-full text-[36px] font-medium leading-[44px] text-black max-lg:text-center md:text-[48px] md:leading-[56px] lg:text-left lg:text-[52px] lg:leading-[68px] xl:w-[702px] xl:text-[76px] xl:leading-[102px]">
+              <p className="w-full text-[36px] font-medium leading-[44px] text-black max-lg:text-center md:text-[48px] md:leading-[56px] lg:text-left lg:text-[52px] lg:leading-[68px] xl:w-[702px] xl:text-[76px] xl:leading-[102px]">
                 Influence.
                 <br />
                 <span className="text-mediovate-tan">Engage.</span> Convert.
-              </h2>
+              </p>
             </div>
 
             <div className="max-lg:order-3 lg:mt-6 xl:mt-8">
@@ -118,9 +118,9 @@ export default function WhoWeAreSection() {
 
           <div className="contents lg:flex lg:min-w-0 lg:flex-col lg:self-stretch xl:flex-1">
             <div className="flex max-lg:order-4 flex-col items-center pt-0 text-center max-lg:w-full lg:items-start lg:text-left xl:pl-16">
-              <span className="inline-flex h-[34px] w-[120px] items-center justify-center rounded-[40px] border border-[#DAD2D2] font-open-sans text-[14px] font-semibold uppercase leading-[28px] text-mediovate-tan">
+              <h2 className="inline-flex h-[34px] w-[120px] items-center justify-center rounded-[40px] border border-[#DAD2D2] font-open-sans text-[14px] font-semibold uppercase leading-[28px] text-mediovate-tan">
                 Who we are
-              </span>
+              </h2>
               <p className="mt-4 w-full max-w-[340px] font-open-sans text-[15px] font-normal leading-[26px] text-black md:max-w-[520px] md:text-[16px] md:leading-[28px] lg:mt-4 lg:max-w-none xl:mt-6 xl:w-[546px]">
                 Mediovate is a result-driven{" "}
                 <strong className="font-bold">
@@ -142,6 +142,7 @@ export default function WhoWeAreSection() {
                 <Image
                   src="/assets/Home/website other parts-01 (1).jpg"
                   alt="Influencer filming content for a brand campaign"
+                  title="Influencer filming content for a brand campaign"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 560px, 50vw"

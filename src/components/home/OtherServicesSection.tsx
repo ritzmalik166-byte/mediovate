@@ -201,18 +201,18 @@ export default function OtherServicesSection() {
     >
       <div className="mx-auto max-w-[1366px] px-4 md:px-8 lg:px-10">
         <div className="flex flex-col items-center">
-          <span className="text-center font-sans text-[14px] font-semibold uppercase leading-normal text-[#A87C4F] md:text-[15px] lg:text-[16px]">
+          <h2 className="text-center font-sans text-[14px] font-semibold uppercase leading-normal text-[#A87C4F] md:text-[15px] lg:text-[16px]">
             Our Other Services
-          </span>
+          </h2>
 
-          <h2 className="mt-4 w-full text-center">
+          <h3 className="mt-4 w-full text-center">
             <span className="mx-auto block w-full font-sans text-[32px] font-medium leading-[40px] text-black md:text-[44px] md:leading-[52px] lg:w-full xl:w-[605px] xl:text-[60px] xl:leading-[72px]">
               Creative Services &amp;
             </span>
             <span className="block font-sans text-[32px] font-medium leading-[40px] text-[#A87C4F] md:text-[44px] md:leading-[52px] xl:text-[60px] xl:leading-[72px]">
               Digital Marketing
             </span>
-          </h2>
+          </h3>
 
           <p className="mx-auto mt-4 w-full text-center font-open-sans text-[15px] font-normal leading-[26px] text-black md:mt-5 md:max-w-[600px] md:text-[16px] md:leading-[28px] lg:mt-6 xl:mt-6 xl:h-[68px] xl:w-[727px] xl:max-w-none">
             From influencer collaborations to full-scale digital campaigns,
@@ -249,6 +249,7 @@ export default function OtherServicesSection() {
             <Image
               src={activeService.image}
               alt={activeService.imageAlt}
+              title={activeService.imageAlt}
               fill
               className={`object-cover ${
                 isImageTransitioning
@@ -260,7 +261,8 @@ export default function OtherServicesSection() {
             {outgoingImageIndex !== null ? (
               <Image
                 src={creativeServices[outgoingImageIndex].image}
-                alt=""
+                alt={creativeServices[outgoingImageIndex].imageAlt}
+                title={creativeServices[outgoingImageIndex].imageAlt}
                 fill
                 sizes="(max-width: 1024px) 560px, 380px, 367px"
                 className="z-10 object-cover animate-[dm-image-fade-out_0.5s_ease-out_forwards]"

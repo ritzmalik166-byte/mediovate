@@ -97,6 +97,8 @@ function FooterAnchorLinkList({
         <li key={item.hash} className={listItemClassName}>
           <a
             href={`#${item.hash}`}
+            title={item.label}
+            aria-label={`Go to ${item.label}`}
             onClick={(event) => {
               event.preventDefault();
               onLinkClick(item.hash);
